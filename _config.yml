@@ -4,7 +4,7 @@
 
 # Site
 title: funnycoderstar
-subtitle: 程序媛,前端
+subtitle: 程序媛, 前端
 description: happy coding
 author: funnycoderstar
 language: zh-Hans
@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://wangyaxing.top
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -73,6 +73,10 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
+
+search:
+        path: search.xml
+        field: post
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

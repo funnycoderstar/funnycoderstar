@@ -213,7 +213,7 @@
                   <span class="post-meta-item-text">{{ __('post.wordcount') }}</span>
                 {% endif %}
                 <span title="{{ __('post.wordcount') }}">
-                  {{ wordcount(post.content) }}
+                  {{ wordcount(post.content) }}字
                 </span>
               {% endif %}
 
@@ -229,7 +229,7 @@
                   <span class="post-meta-item-text">{{ __('post.min2read') }}</span>
                 {% endif %}
                 <span title="{{ __('post.min2read') }}">
-                  {{ min2read(post.content) }}
+                  {{ min2read(post.content) }}分钟
                 </span>
               {% endif %}
             </div>
@@ -319,6 +319,8 @@
         {% include 'wechat-subscriber.swig' %}
       </div>
     {% endif %}
+    <div>
+</div>
 
     {% if (theme.alipay or theme.wechatpay or theme.bitcoin) and not is_index %}
       <div>
@@ -367,6 +369,7 @@
 		  	 <span id="{{ url_for(post.path) }}"class="leancloud_visitors"  data-flag-title="{{ post.title }}">
             &nbsp; | &nbsp; {{__('post.visitors')}}
             </span>
+            <span>次</span>
 		  {% endif %}
           </div>
         {% endif %}

@@ -195,7 +195,7 @@ excerpt_description: true
 # Automatically Excerpt. Not recommend.
 # Please use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
-  enable: false
+  enable: true
   length: 150
 
 # Post meta display settings
@@ -211,7 +211,7 @@ post_wordcount:
   item_text: true
   wordcount: true
   min2read: true
-  separated_meta: true
+  # separated_meta: true
 
 # Wechat Subscriber
 #wechat_subscriber:
@@ -339,8 +339,8 @@ disqus:
 # changyan
 changyan:
   enable: false
-  appid:
-  appkey:
+  appid: cyt9TRBXm
+  appkey: c7fb69deb176c85d5176ad20f0e14cd8
 
 # Support for youyan comments system.
 # You can get your uid from http://www.uyan.cc
@@ -445,15 +445,15 @@ busuanzi_count:
   enable: true
   # custom uv span for the whole site
   site_uv: true
-  site_uv_header: <i class="fa fa-user"></i>访问用户：
+  site_uv_header: <i class="fa fa-user"></i>访问人数：
   site_uv_footer: 人
   # custom pv span for the whole site
   site_pv: true
-  site_pv_header: <i class="fa fa-eye"></i>访问次数：
+  site_pv_header: <i class="fa fa-eye"></i>总访问量
   site_pv_footer: 次
   # custom pv span for one page only
   page_pv: true
-  page_pv_header: <i class="fa fa-file-o"></i> 点击量
+  page_pv_header: <i class="fa fa-file-o"></i> 浏览
   page_pv_footer: 次
 
 
@@ -465,7 +465,7 @@ busuanzi_count:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page
@@ -628,6 +628,7 @@ vendors:
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
   fontawesome:
+
 
   # Internal version: 1
   # https://www.algolia.com
