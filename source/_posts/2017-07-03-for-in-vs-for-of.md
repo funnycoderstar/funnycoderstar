@@ -1,5 +1,5 @@
 ---
-title: 2017-07-03-for in vs for of
+title: for in vs for of
 date: 2017-07-03 11:27:09
 tags: javascript
 categories: javascript

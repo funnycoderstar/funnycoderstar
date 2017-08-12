@@ -1,8 +1,5 @@
 // Custom styles.
 /*首页文章阴影样式*/
-body{
-    background-color: pink;
-}
 .post {
   margin-bottom: 100px;
   padding: 25px;
@@ -10,53 +7,8 @@ body{
   -moz-box-shadow: 0 0 14px rgba(202,203,204,1);
   background: #fff;
 }
-.posts-expand .post-eof {
-  display: block;
-  margin: 0px auto 60px;
-  width: 8%;
-  height: 1px;
-  background: #ccc;
-  text-align: center;
-}
-
 .footer {
   position: static;
-}
-#canvas{
-  width: 100%;
-  height:100%;
-}
-.bg_content{
-  position: fixed;
-  top: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  margin:0;
-  overflow:hidden;
-  cursor:none;
-  background:black;
-  background: linear-gradient(to bottom, #dcdcdc 0%, palevioletred 100%);
-}
-.filter {
-  width:100%;
-  height:100%;
-  position:absolute;
-  top:0;
-  left:0;
-  background:#fe5757;
-  animation:colorChange 30s ease-in-out infinite;
-  animation-fill-mode:both;
-  mix-blend-mode:overlay;
-  z-index: -1;
-}
-@keyframes colorChange {
-  0%,100% {
-    opacity:0;
-  }
-  50% {
-    opacity:.9;
-  }
 }
 
 /*头像改为圆形，hover转动*/
@@ -85,77 +37,12 @@ body{
 
 }
 @media (max-width: 767px) {
-
-  .site-nav-toggle {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+  .posts-expand {
+    margin: 0;
   }
 }
-  /*相册页面样式*/
-#photo{
-  overflow: auto;
-}
-#photo .fancybox img{
-  display:inline-block;
-  float:left;
-  margin: 20px;
-  -webkit-box-shadow: 0 0 14px #cacbcb;
-  width: 300px;
-  border: 5px solid #fff;
-}
-#photo p{
-    overflow:auto;
-  }
-
-  /*手机尺寸下代码高亮部分修改*/
-@media (max-width: 767px){
-  .post-body .highlight {
-    width: 100%;
-    padding: 0;
-  }
-}
-
 .headband{
   height: 0;
-}
-.btn:hover, .post-button .btn{
-  border-color: #e5a2b4;
-  background: #fff;
-  color: #e5a2b4;
-}
-.post-button .btn{
-  color: #e5a2b4;
-  font-size: 14px;
-  background: #fff;
-  border-radius: 0;
-  line-height: 2;
-  margin: 7px 4px -1px 4px;
-}
-@media (min-width: 1600px) {
-  #photo .fancybox img{
-    width: 400px;
-    background: #fff;
-    display: inline-block;
-    float: left;
-    margin: 20px;
-    padding: 5px;
-    border-radius: 5px;
-  }
-}
-@media (max-width: 767px){
-  .post-body .highlight {
-    width: 124%;
-    padding: 0;
-  }
-}
-.post-copyright{
-  margin: 2em 0 0;
-  padding: 1em 2em;
-  border-left: 3px solid #ff1700;
-  background-color: #f9f9f9;
-  list-style: none;
 }
  .fa-heart {
    color: #ff1700;

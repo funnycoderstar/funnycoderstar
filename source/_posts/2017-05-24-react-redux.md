@@ -1,5 +1,5 @@
 ---
-title: 2017-05-24-react-redux
+title: react-redux
 date: 2017-05-24 13:34:42
 tags: redux
 categories: react

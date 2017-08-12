@@ -445,8 +445,8 @@ busuanzi_count:
   enable: true
   # custom uv span for the whole site
   site_uv: true
-  site_uv_header: <i class="fa fa-user"></i>访问人数：
-  site_uv_footer: 人
+  site_uv_header: <i class="fa fa-user"></i>您是第：
+  site_uv_footer: 个来访者
   # custom pv span for the whole site
   site_pv: true
   site_pv_header: <i class="fa fa-eye"></i>总访问量
@@ -552,7 +552,7 @@ use_motion: true
 fancybox: true
 
 # Progress bar in the top during page loading.
-pace: false
+pace: true
 # Themes list:
 #pace-theme-big-counter
 #pace-theme-bounce
@@ -572,7 +572,7 @@ pace: false
 pace_theme: pace-theme-minimal
 
 # Canvas-nest
-canvas_nest: true
+canvas_nest: false
 
 # three_waves
 three_waves: false

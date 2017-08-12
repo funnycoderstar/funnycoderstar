@@ -365,12 +365,6 @@
                 <div class="fb-like" data-layout="button_count" data-share="true"></div>
               </div>
             {% endif %}
-            {% if theme.leancloud_visitors.enable %}
-		  	 <span id="{{ url_for(post.path) }}"class="leancloud_visitors"  data-flag-title="{{ post.title }}">
-            &nbsp; | &nbsp; {{__('post.visitors')}}
-            </span>
-            <span>次</span>
-		  {% endif %}
           </div>
         {% endif %}
         </div>

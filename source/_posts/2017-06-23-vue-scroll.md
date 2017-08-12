@@ -1,5 +1,5 @@
 ---
-title: 2017-06-23-vue中scroll的用法
+title: vue中scroll的用法
 date: 2017-06-23 13:36:13
 tags: vue
 categories: vue

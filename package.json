@@ -6,7 +6,7 @@
     "version": "3.3.8"
   },
   "scripts": {
-    "copy": "cp -r  public ~/Desktop/deploy"
+    "copy": "cp -r  public/* ~/Desktop/deploy"
   },
   "dependencies": {
     "hexo": "^3.2.0",
