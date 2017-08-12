@@ -329,7 +329,7 @@ baidu_analytics: 26074a6cc483aa2f9eaba68ab744da03
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname:
   count: true
 
@@ -338,7 +338,7 @@ disqus:
 
 # changyan
 changyan:
-  enable: false
+  enable: true
   appid: cyt9TRBXm
   appkey: c7fb69deb176c85d5176ad20f0e14cd8
 

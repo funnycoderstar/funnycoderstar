@@ -1,7 +1,7 @@
 // Custom styles.
 /*首页文章阴影样式*/
 body{
-
+    background-color: pink;
 }
 .post {
   margin-bottom: 100px;
@@ -19,24 +19,6 @@ body{
   text-align: center;
 }
 
-/*首页点击出现下划线*/
-.posts-expand .post-title-link:hover::before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  -moz-transform: scaleX(1);
-  -ms-transform: scaleX(1);
-  -o-transform: scaleX(1);
-  transform: scaleX(1);
-}
-.posts-expand .post-title-link{
-  margin-bottom:20px;
-  display: inline-block;
-  position: relative;
-  color: #555;
-  border-bottom: none;
-  line-height: 2.2;
-  vertical-align: top;
-}
 .footer {
   position: static;
 }
@@ -127,44 +109,6 @@ body{
     overflow:auto;
   }
 
-  /*更新背景*/
-.brand{
-  background : transparent;
-}
-.a:hover{
-  color :#fe5757;
-}
-.pagination .page-number.current{
-  background :transparent;
-}
-.pagination .prev, .pagination .next, .pagination .page-number{
-  border-top:none;
-}
-.pagination{
-  border-top:none;
-}
-.pagination .prev:hover, .pagination .next:hover, .pagination .page-number:hover{
-  background :#fff;
-  color :#000
-}
-.sidebar{
-  background :rgba(255,255,255,0.96);
-  box-shadow :none
-}
-.site-description,.site-state-item-count,.site-state-item-name,.sidebar-nav li:hover,.post-toc ol a,.tag-cloud-title{
-  color:#555
-}
-#photo #posts .fancybox img{
-    background: #fff;
-    display: inline-block;
-    float: left;
-    margin: 20px;
-    padding: 5px;
-    -webkit-box-shadow:none;
-    width: 300px;
-    border-radius: 5px;
-}
-
   /*手机尺寸下代码高亮部分修改*/
 @media (max-width: 767px){
   .post-body .highlight {
@@ -188,9 +132,6 @@ body{
   border-radius: 0;
   line-height: 2;
   margin: 7px 4px -1px 4px;
-}
-.page-archive .posts-collapse .archive-move-on,.posts-collapse .collection-title::before{
-  background: #fff;
 }
 @media (min-width: 1600px) {
   #photo .fancybox img{
@@ -217,8 +158,29 @@ body{
   list-style: none;
 }
  .fa-heart {
-   color: red;
+   color: #ff1700;
  }
  .fa-image {
    color: pink;
+ }
+ .fa-tags {
+   color: purple;
+ }
+ .fa-archive {
+   color: orange;
+ }
+ .fa-user {
+   color: blue;;
+ }
+ .fa-th {
+   color: green;;
+ }
+ .fa-home {
+   color: #4099e5;
+ }
+ .fa-eye {
+   color: purple;
+ }
+ .site-brand-wrapper {
+   background-color: #FFD39B;
  }
