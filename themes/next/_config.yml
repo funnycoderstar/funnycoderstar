@@ -322,7 +322,7 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-baidu_analytics: 26074a6cc483aa2f9eaba68ab744da03
+# baidu_analytics: 
 
 # Duoshuo ShortName
 #duoshuo_shortname:
@@ -453,7 +453,7 @@ busuanzi_count:
   site_pv_footer: 次
   # custom pv span for one page only
   page_pv: true
-  page_pv_header: <i class="fa fa-file-o"></i> 浏览
+  page_pv_header: <i class="fa fa-eye"></i> 阅读次数
   page_pv_footer: 次
 
 
@@ -465,7 +465,7 @@ busuanzi_count:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: true
+baidu_push: false
 
 # Google Calendar
 # Share your recent schedule to others via calendar page
