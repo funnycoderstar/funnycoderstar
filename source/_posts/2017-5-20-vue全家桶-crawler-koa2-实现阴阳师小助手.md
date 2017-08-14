@@ -5,6 +5,7 @@ tags: vue
 type: "tags"
 categories: vue
 ---
+![title](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1502713315793&di=f4c278533dc65215060e4dd216b01a20&imgtype=0&src=http%3A%2F%2Fupload.chinaz.com%2F2016%2F0928%2F6361065295044373028726125.png)
 最近一直在玩阴阳师，看了好多小助手，觉得太复杂了，还得登录什么的，想着自己写一个简单的小助手，只要输入要搜索的式神，我想知道的关于这个式神的数据就能显示出来。
 只是第一版，前端用vue全家桶实现的，很适合刚开始接触vue的，后端用node实现的，如果有更好的建议或者想一起合作写个更好用点的，欢迎联系 [作者](https://github.com/funnycoderstar/yys-fe)。
 <!-- more -->
