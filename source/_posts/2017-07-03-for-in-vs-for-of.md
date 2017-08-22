@@ -3,8 +3,9 @@ title: for in vs for of
 date: 2017-07-03 11:27:09
 tags: javascript
 categories: javascript
-description: [javascript, for in, for of]
 ---
+![title](https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1652442167,4081781189&fm=173&s=67CAF30748133CC46E9D988C0300F083&w=630&h=379&img.JPEG)
+<!--more-->
 ###  for in 和 for of 的区别
 
 - for in 更适合遍历对象，不要使用for in 遍历数组

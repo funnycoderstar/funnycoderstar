@@ -3,8 +3,9 @@ title: react-redux
 date: 2017-05-24 13:34:42
 tags: redux
 categories: react
-description: [react-redux]
 ---
+![title](http://www.ruanyifeng.com/blogimg/asset/2016/bg2016092101.jpg)
+<!--more-->
 ## redux
 
 redux的三个概念: action reducer store
