@@ -17,14 +17,6 @@ categories: vue
 
 ##### 1,实现简单的v-model的绑定
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>实现v-model的绑定</title>
-</head>
 <body>
     <input type="text" id="input" v-model="a"/>
     <p>可以打开控制台,然后输入vm.查看view到model的绑定;然后改变input的值,再次在控制台输出vm.查看model到view的绑定</p>
@@ -42,7 +34,6 @@ categories: vue
         }, 1000);
     </script>
 </body>
-</html>
 ```
 
 ```js
@@ -77,19 +68,13 @@ function Vue(data) {
     }
 }
 ```
-
+- 把一个普通 JavaScript 对象传给 Vue 实例的 data
+ 选项，Vue 将遍历此对象所有的属性，并使用 [Object.defineProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty) 把这些属性全部转为 getter/setter。
+- 给input添加oninput事件实现view到model的绑定,即在input中输入一个值,vm.a也会跟着发生变化
 
 ##### 2,实现多个v-model的绑定
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>实现多个v-model的绑定</title>
-</head>
 <body>
     <div id="form">
         <input type="text" v-model="a" />
@@ -111,7 +96,6 @@ function Vue(data) {
         });
     </script>
 </body>
-</html>
 
 ```
 
@@ -139,17 +123,11 @@ function Vue(data) {
 }
 
 ```
+- 实现原理个实现一个v-model差不多
 
 ##### 3,实现模板的绑定
+- 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>实现{{}}的绑定</title>
-</head>
 <body>
     <div id="form">
         <input type="text" v-model="a" />
@@ -177,9 +155,9 @@ function Vue(data) {
         console.log(vm);
     </script>
 </body>
-</html>
 ```
-
+- 用正则匹配到html中的模板字符串,然后将相应的部分替换成变量
+- 匹配html中多个模板,必须先了解dom的结构
 ```js
 function Vue(data) {
     const input = document.querySelectorAll('input');
@@ -243,14 +221,6 @@ function Vue(data) {
 ##### 4,实现v-bind,v-on的绑定
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Vue</title>
-</head>
 <body>
     <div id="form">
         <h4>这是测试v-model的效果</h4>
@@ -294,7 +264,6 @@ function Vue(data) {
         });
     </script>
 </body>
-</html>
 ```
 ```js
 /**
