@@ -1,10 +1,19 @@
 ---
-title: vue中检测不到对象的变化
+title: 嘿,使用vue,你注意到了这些了么?
 date: 2017-08-23 10:46:53
 tags: vue
 ---
 ![title](http://upload-images.jianshu.io/upload_images/1541368-d9be1b3b39abc037?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+最近使用vue,遇到了这样的一个坑,vue中检测不到data的变化,我想把给data中的a赋值一个新的对象(添加一个它本身不存在的属性),然而经过尝试发现直接赋值是行不通的,以下是我做的一下尝试
 <!--more-->
+```js
+<template>
+  <div>
+      {{a}}
+  </div>
+</template>
+
+```
 
 ```js
  data() {
@@ -17,9 +26,40 @@ tags: vue
          this.a.b = 1;
      }, 1000)
  },
+ watch: {
+    a(newVal, oldVal) {
+        console.log(`${oldVal}现在变成了${newVal}`);
+    },
+},
 
 ```
-###### tips1: js取值的两种方式的区别
+- 上面这样写(给对象a添加一个本来不存在的属性b,并给他赋值)并不会触发watch,
+![title](http://oo4xdz5i0.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-24%20%E4%B8%8B%E5%8D%882.33.48.png)
+- [vue文档中](https://cn.vuejs.org/v2/guide/reactivity.html#变化检测问题)也明确表示添加到对象上的新属性不会触发更新,所以我们应该新建一个新的对象并将这个心对象的值赋值给原有的对象
+```js
+export default {
+    data() {
+        return {
+            a: {},
+        };
+    },
+    created() {
+        setTimeout(() => {
+            this.a = {
+                b: 1,
+            };
+        }, 500);
+    },
+    watch: {
+        a(newVal, oldVal) {
+            console.log(`${oldVal}现在变成了${newVal}`);
+        },
+    },
+};
+```
+--------
+## 由此给大家拓展一个对象的一些知识
+### tips1: js取值的两种方式的区别
 ```js
 const obj = {abc:"ss",nn:90};
 const v1 = obj.abc; // 使用点的方式
@@ -31,18 +71,21 @@ const v2 = obj["abc"]; // 使用中括号的方式
 const v3 = obj[key];
 ```
 
-###### tips2: 对象深拷贝实现方法
+### tips2: 对象深拷贝实现方法
 >  先解释什么是深拷贝和浅拷贝
+
 - 浅拷贝是对对象地址的复制,并没有开辟新的栈,复制的结果是两个对象指向同一个地址,修改其中一个对象的属性,另一个对象的属性也会改变
 - 深拷贝是开辟新的栈,两个对象对应两个不同的地址,修改一个对象的属性,不会改变另一个对象的属性
-> 最简单的如下
+> 最简单的如下(方法一)
+
 ```js
 b = JSON.parse( JSON.stringify(a) )
 ```
 但是会存在一些问题
 - 无法复制函数
 - 原型链没了，对象就是object，所属的类没了。
-> 使用递归
+> 使用递归(方法二)
+
 ```js
 const obj1 = {
     name: 'cehsi',
@@ -74,3 +117,153 @@ obj2.age = 20;
 console.log(obj2, obj1); // { name: 'cehsi', age: 20, friends: [ 'sk', 'ls' ] } { name: 'cehsi', age: 13, friends: [ 'sk', 'ls' ] }
 ```
 > [使用npm install deepcopy](https://www.npmjs.com/package/deepcopy)
+
+### tips3: 深对比,方法参考 http://stackoverflow.com/questions/1068834/object-comparison-in-javascript
+> 方法一:Object.toJSON()
+
+```
+这个方法简单,但是只适用于两个对象属性相同的情况,在没有方法和DOM节点的情况下，您可以使用简单的JSON样式对象：
+```
+
+```js
+const obj1 = {
+    a: 1,
+    b: 2,
+}
+
+const obj2 = {
+    a: 1,
+    b: 2,
+}
+const obj3 = {
+    b: 2,
+    a: 1,
+}
+console.log(JSON.stringify(obj1) === JSON.stringify(obj2)); // true
+console.log(JSON.stringify(obj1) === JSON.stringify(obj3)); // false
+```
+> 方法二: 深度比较两个对象
+
+```
+比较对象而不挖掘原型，然后递归地比较属性的投影，还可以比较构造函数。
+```
+```js
+
+    function deepCompare(x, y) {
+        var i, l, leftChain, rightChain;
+
+        function compare2Objects(x, y) {
+            var p;
+
+            // remember that NaN === NaN returns false
+            // and isNaN(undefined) returns true
+            if (isNaN(x) && isNaN(y) && typeof x === 'number' && typeof y === 'number') {
+                return true;
+            }
+
+            // Compare primitives and functions.     
+            // Check if both arguments link to the same object.
+            // Especially useful on the step where we compare prototypes
+            if (x === y) {
+                return true;
+            }
+
+            // Works in case when functions are created in constructor.
+            // Comparing dates is a common scenario. Another built-ins?
+            // We can even handle functions passed across iframes
+            if ((typeof x === 'function' && typeof y === 'function') ||
+                (x instanceof Date && y instanceof Date) ||
+                (x instanceof RegExp && y instanceof RegExp) ||
+                (x instanceof String && y instanceof String) ||
+                (x instanceof Number && y instanceof Number)) {
+                return x.toString() === y.toString();
+            }
+
+            // At last checking prototypes as good as we can
+            if (!(x instanceof Object && y instanceof Object)) {
+                return false;
+            }
+
+            if (x.isPrototypeOf(y) || y.isPrototypeOf(x)) {
+                return false;
+            }
+
+            if (x.constructor !== y.constructor) {
+                return false;
+            }
+
+            if (x.prototype !== y.prototype) {
+                return false;
+            }
+
+            // Check for infinitive linking loops
+            if (leftChain.indexOf(x) > -1 || rightChain.indexOf(y) > -1) {
+                return false;
+            }
+
+            // Quick checking of one object being a subset of another.
+            // todo: cache the structure of arguments[0] for performance
+            for (p in y) {
+                if (y.hasOwnProperty(p) !== x.hasOwnProperty(p)) {
+                    return false;
+                } else if (typeof y[p] !== typeof x[p]) {
+                    return false;
+                }
+            }
+
+            for (p in x) {
+                if (y.hasOwnProperty(p) !== x.hasOwnProperty(p)) {
+                    return false;
+                } else if (typeof y[p] !== typeof x[p]) {
+                    return false;
+                }
+
+                switch (typeof(x[p])) {
+                    case 'object':
+                    case 'function':
+
+                        leftChain.push(x);
+                        rightChain.push(y);
+
+                        if (!compare2Objects(x[p], y[p])) {
+                            return false;
+                        }
+
+                        leftChain.pop();
+                        rightChain.pop();
+                        break;
+
+                    default:
+                        if (x[p] !== y[p]) {
+                            return false;
+                        }
+                        break;
+                }
+            }
+
+            return true;
+        }
+
+        if (arguments.length < 1) {
+            return true; //Die silently? Don't know how to handle such case, please help...
+            // throw "Need two or more arguments to compare";
+        }
+
+        for (i = 1, l = arguments.length; i < l; i++) {
+
+            leftChain = []; //Todo: this can be cached
+            rightChain = [];
+
+            if (!compare2Objects(arguments[0], arguments[i])) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+```
+- 已知问题（他们的优先级很低，可能你永远不会注意到）
+
+- 具有不同原型结构但相同投影的物体
+- 函数可能具有相同的文本，但是指的是不同的闭包原型
