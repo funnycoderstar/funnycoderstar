@@ -1,0 +1,98 @@
+---
+title: vue组件通信
+date: 2017-08-29 18:48:41
+tags:
+---
+![title](http://upload-images.jianshu.io/upload_images/1541368-d9be1b3b39abc037?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<!--more-->
+#### 3,子组件怎么给父组件通信
+> 1,父组件给子组件传递数据
+vue中使用props向子组件传递数据
+1): 子组件在props中创建一个属性,用于接收父组件传过来的值  
+2): 父组件中注册子组件  
+3): 在子组件标签中添加子组件props中创建的属性  
+4): 把需要传给子组件的值赋给该属性  
+> 2,子组件向父组件传递数据
+子组件主要通过事件传递数据给父组件
+1), 子组件中需要以某种方式,例如点击事件的方法来触发一个自定义事件
+2),将需要传的值作为$emit的第二个参数,该值将作为实参数传给相应自定义事件的方法
+3),在父组件中注册子组件并在子组件标签上绑定自定义事件的监听
+> 3,子组件向子组件传递数据
+vue找那个没有直接子组件对子组件传参的方法,建议将需要传递数据的在组件,都合并为一个组件,
+如果一定需要子组件对子组件传参,可以先传到父组件,再传到子组件,为了方便开发,vue推出了一个状态管理工具vuex,可以啃方便的实现组件之间的参数传递
+
+```js
+// 父组件向子组件传递数据
+<!--
+msg 是在data中(父组件)定义的变量
+如果需要从父组件中获取logo的值,就需要使用props['msg'], 如30行
+在props中添加了元素以后,就不需要在data中(子组件)中再添加变量了
+-->
+<template>
+  <div>
+    <child  @transferuser="getUser" :msg="msg"></child>  
+    <p>用户名为:{{user}}(我是子组件传递给父组件的数据)</p>  
+  </div>
+</template>
+
+<script>
+    import child from './child.vue';
+    export default {
+        components: {
+            child,
+        },
+        data() {
+            return {
+                user: '',
+                msg: '我是父组件传给子组件的信息',
+            };
+        },
+        methods: {
+            getUser(msg) {
+                this.user = msg;
+                console.log(msg);
+            },
+        },
+    };
+</script>
+
+```
+```js
+// 子组件向父组件传递数据
+<!--
+1.@ : 是  v-on的简写
+2.子组件主要通过事件传递数据给父组件
+3.当input的值发生变化时,将username传递给parent.vue,首先声明了一个setUser,用change事件来调用setUser
+4.在setUser中,使用了$emit来遍历transferUser事件,并返回this.username,其中transferuser是一个自定义事件,功能类似一个中转,this.username通过这个事件传递给父组件
+-->
+<template>
+  <div>
+      <div>{{msg}}</div>
+      <span>用户名</span>
+      <input v-model="username" @change='setUser'>向父组件传值</button>
+  </div>
+</template>
+
+<script>
+    export default {
+        data() {
+            return {
+                username: '测试',
+            };
+        },
+        props: {
+            msg: {
+                type: String,
+            },
+        },
+        methods: {
+            setUser() {
+                this.$emit('transferuser', this.username);
+            },
+        },
+    };
+</script>
+
+
+
+```

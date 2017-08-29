@@ -4,7 +4,93 @@ date: 2017-08-23 10:46:53
 tags: vue
 ---
 ![title](http://upload-images.jianshu.io/upload_images/1541368-d9be1b3b39abc037?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-最近使用vue,遇到了这样的一个坑,vue中检测不到data的变化,我想把给data中的a赋值一个新的对象(添加一个它本身不存在的属性),然而经过尝试发现直接赋值是行不通的,以下是我做的一下尝试
+<!--more-->
+# 问题一:
+vue组件之间传递数据,在子组件中我想改变一个从父组件中传过来的值
+> 这是父组件
+```js
+
+<template>
+  <div>
+      <Child :message="message"></Child>
+  </div>
+</template>
+
+<script>
+import Child from './child.vue';
+export default {
+    data() {
+        return {
+            message: '这是传给子组件的信息',
+        };
+    },
+    components: {
+        Child,
+    },
+};
+</script>
+
+```
+> 这是子组件
+```js
+<template>
+  <div @click="handleChange">
+      {{message}}
+  </div>
+</template>
+
+<script>
+    export default {
+        props: {
+            message: {
+                type: String,
+                default: '这是默认信息',
+            },
+        },
+        methods: {
+            handleChange() {
+                this.message = '我是子组件修改后的信息';
+            },
+        },
+    };
+</script>
+
+```
+如果你这样写就会报一下错误
+![title](http://oo4xdz5i0.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-24%20%E4%B8%8B%E5%8D%883.12.16.png)
+但是在子组件中，我们不要去修改 prop。如果你必须要修改到这些数据，你可以使用以下方法：
+- 把 prop 赋值给一个局部变量，然后需要修改的话就修改这个局部变量，而不影响 prop
+```js
+<template>
+  <div @click="handleChange">
+      {{newMessage}}
+  </div>
+</template>
+
+<script>
+    export default {
+        props: {
+            message: {
+                type: String,
+                default: '这是默认信息',
+            },
+        },
+        data() {
+            return {
+                newMessage: this.message,
+            };
+        },
+        methods: {
+            handleChange() {
+                this.newMessage = '我是子组件修改后的信息';
+            },
+        },
+    };
+</script>
+
+```
+# 问题二:
+vue中检测不到data的变化,我想把给data中的a赋值一个新的对象(添加一个它本身不存在的属性),然而经过尝试发现直接赋值是行不通的,以下是我做的一下尝试
 <!--more-->
 ```js
 <template>
