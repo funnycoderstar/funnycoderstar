@@ -6,6 +6,7 @@ type: "tags"
 categories: vue
 ---
 ![title](http://upload-images.jianshu.io/upload_images/1541368-d9be1b3b39abc037?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+组件通信是很重要的一部分,父组件怎么传数据给子组件,子组件怎么传递数据给父组件?
 <!--more-->
 #### 3,子组件怎么给父组件通信
 > 1,父组件给子组件传递数据

@@ -6,6 +6,7 @@ type: "tags"
 categories: vue
 ---
 ![title](http://upload-images.jianshu.io/upload_images/1541368-d9be1b3b39abc037?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+vue声明周期,在每个声明周期中都干了些什么?
 <!--more-->
 #### 1, vue的生命周期
 - beforeCreate: 组件实例刚刚被创建,组件属性计算之前,如data属性

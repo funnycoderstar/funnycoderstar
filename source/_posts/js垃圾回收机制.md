@@ -5,6 +5,7 @@ tags: javascript
 categories: javascript
 ---
 ![title](http://upload-images.jianshu.io/upload_images/4369238-b38891061c7cd794.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/540/q/50)
+你了解javascript的垃圾回收机制么?
 <!--more-->
 - 引用计数
 此算法把“对象是否不再需要”简化定义为“对象有没有其他对象引用到它”。如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收。

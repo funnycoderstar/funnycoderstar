@@ -6,6 +6,7 @@ type: "tags"
 categories: vue
 ---
 ![title](http://upload-images.jianshu.io/upload_images/1541368-d9be1b3b39abc037?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+使用vue过程中,遇到了一些问题,这里先总结以下两个:
 <!--more-->
 # 问题一:
 vue组件之间传递数据,在子组件中我想改变一个从父组件中传过来的值

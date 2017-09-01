@@ -5,6 +5,7 @@ tags: javascript
 categories: javascript
 ---
 ![title](http://upload-images.jianshu.io/upload_images/1096130-fe7e33473c926bcc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+什么是函数节流?为什么要用到函数节流?函数节流可以解决哪写问题?
 <!--more-->
 > [函数节流](http://www.alloyteam.com/2012/11/javascript-throttle/)
 
