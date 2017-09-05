@@ -52,7 +52,7 @@ menu:
   archives: /archives/
   tags: /tags/
   photo: /photo/
-  essay: /essay/
+  # essay: /essay/
   #sitemap: /sitemap.xml
   #commonweal: /404/
 
