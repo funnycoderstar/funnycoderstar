@@ -53,7 +53,7 @@ onLoad(options) {
 
 ### 2,[微信小程序授权处理](https://devework.com/weixin-weapp-auth-failed.html)
 - 微信小程序提示授权弹窗,如果用户第一次点击拒绝之后,一段时间将不会再次弹出来,然后用户又不知道什么原因用不了小程序,这是个很糟糕的用户体验,我们应该优雅的处理这种情况
-
+- 采用的解决方法[参考](https://devework.com/weixin-weapp-auth-failed.html)
 
 ### 3, 登录问题的处理
 - 两个登录接口,一个get,判断是否已经还需要登录,如果返回true,则需要登录,如果返回false,则不需要登录
@@ -91,6 +91,31 @@ function setStorage(key, value) {
 }
 ```
 ### 4,wx.getStorage安卓手机上返回的错误信息是getStorage:fail,ios,getStorage:fail data not found
+- 在判断一些api返回的错误信息时,最好不要通过判断具体的错误信息来处理错误
+```js
+function getStorage(key) {
+    return new Promise(function (resolve, reject) {
+        // 先判断本地数据存储有没有cookie
+        wx.getStorage({
+            key: key,
+            success: function (res) {
+                resolve(res.data);
+            },
+            fail: function (res) {
+                resolve(null);
+                // 下面注释的部分即为刚开始犯的错误,导致有可能ios或安卓或部分机型显示不出数据
+                // if (res.errMsg == 'getStorage:fail' || res.errMsg == 'getStorage:fail data not found') {
+                //     console.log('没有cookie');
+                //     resolve(null);
+                // } else {
+                //     console.log('这是一个问题');
+                //     reject(res.errMsg);
+                // }
+            },
+        });
+    });
+}
+```
 
 ### 5,小程序解决异步
 - 如果项目中没有用到babal,小程序本身的支持只支持到es6的语法,所以解决异步的问题就不能使用es7的async和await,只能使用promise来解决异步,但是每个api上都进行一次封装(如下),这种做法太恶心了
@@ -179,12 +204,11 @@ for (const key in wx) {
 
 ###  7,总结
 - 有时候在开发者工具上测试时是没有问题的,但是真机测试却有问题,所有开发过程中一定要在多个不同型号的手机上测试;很多时候IOS和安卓api返回的信息不同
+- 在手机上打开调试的时候是好的,但是关闭调试后就会出现各种bug,遇到这种情况一定要一步步的去排查原因
 
 #### 8,后采用wepy重构小程序遇到的一些坑
 [wepy文档](https://wepyjs.github.io/wepy/#/)
 1，Q: 怎么在page组件和component组件中回去到getApp(),就是app里面定义的函数,通过this.$parent只能拿到数据，拿不到方法?
 A:可以在this.$parent的_proto上拿到方法,即this.$parent.onLogin
-2，Q:index  => step => rank => faidRank => rankList ，faidRank里面的修改后的数据怎么传到rankList中?
-A:修改数据必须加上this.$apply()
-3, Q:怎么实现按需加载
+2, Q:怎么实现按需加载
 A:在compoent组件中自定义生命周期函数,并手动触发
