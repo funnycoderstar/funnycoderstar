@@ -3,6 +3,7 @@ title: react-redux
 date: 2017-05-24 13:34:42
 tags: redux
 categories: react
+type: "tags"
 ---
 ![title](http://www.ruanyifeng.com/blogimg/asset/2016/bg2016092101.jpg)
 <!--more-->

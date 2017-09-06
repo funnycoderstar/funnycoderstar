@@ -12,7 +12,7 @@ categories: vue
 项目中写vue也没注意到`<keep-alive></keep-alive>`这个组件,最近在深入的研究vue组件的生命周期函数,每一个函数都是干嘛的,然后其中有`activated`和`deactivated`这两个函数与`<keep-alive></keep-alive>`这个组件有关
 - `activated`: keep-alive组件激活时调用
 - `deactivated`: keep-alive组件停用时调用
-> [keep-alive用法](https://cn.vuejs.org/v2/api/?#keep-alive)
+### [keep-alive用法](https://cn.vuejs.org/v2/api/?#keep-alive)
 - `<keep-alive>`包裹动态组件时,会缓存不活动的组件实例,而不是销毁它们
 - `<keep-alive>`是一个抽象组件:它自身不会渲染一个DOM元素,也不会出现在父组件链中
 - 当组件在`<keep-alive>`内被切换,它的`activated`和`deactivated`这两个生命周期钩子函数将会被对应执行

@@ -87,9 +87,10 @@ vue声明周期,在每个声明周期中都干了些什么?
 created: 完成data数据的初始化,el没有
 beforeMount: 完成了el和data初始化
 mounted: 完成挂载
+
 ![title](http://oo4xdz5i0.bkt.clouddn.com/vueLife.png)
 ```
-vm.a = 'change';
+打开命令行在命令行中输入vm.a = 'change';查看效果
 ```
 ![title](http://oo4xdz5i0.bkt.clouddn.com/vueUpdate.png)
 
