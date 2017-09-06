@@ -15,8 +15,8 @@ vue声明周期,在每个声明周期中都干了些什么?
 - mounted: 模板编译/挂载之后
 - beforeUpdate: 组件更新之前
 - updated: 组件更新之后
-- activated: for keep-alive,组件被激活时调用
-- deactivated: for keep-alive,组件被移除时调用
+- activated: for `keep-alive`,组件被激活时调用
+- deactivated: for `keep-alive`,组件被移除时调用
 - beforeDestroy: 组件销毁前被调用
 - destoryed: 组件销毁后调用
 > ps:下面代码可以直接复制出去执行
@@ -92,3 +92,5 @@ mounted: 完成挂载
 vm.a = 'change';
 ```
 ![title](http://oo4xdz5i0.bkt.clouddn.com/vueUpdate.png)
+
+> `activated`和`deactivated`这两个生命周期函数涉及到`<keep-alive>`这个组件,所以想了解这个生命周期函数的可以看一下我的[另一篇文章](http://wangyaxing.top/2017/08/29/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%AF%A6%E8%A7%A3/#more)
