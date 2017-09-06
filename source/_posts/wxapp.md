@@ -2,6 +2,7 @@
 title: 总结微信小程序开发中遇到的坑
 date: 2017-09-01 13:36:13
 tags: 微信小程序
+categories: 微信小程序
 ---
 ![title](http://www.kviso.com/softnews/UploadPic/2016-12/2016123111185421229.jpg)
 总结微信小程序开发中遇到的坑,一些坑你得一个一个的跳啊,/(ㄒoㄒ)/~~
