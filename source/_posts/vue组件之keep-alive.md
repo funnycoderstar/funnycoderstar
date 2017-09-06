@@ -1,10 +1,13 @@
 ---
-title: 用vue,你知道`<keep-alive></keep-alive>`么
+title: 用vue,你知道 keep-alive 么
 date: 2017-09-06 17:26:46
 tags: vue
 type: "tags"
 categories: vue
 ---
+
+![title](http://oo4xdz5i0.bkt.clouddn.com/keep-alive.jpg)
+<!--more-->
 
 项目中写vue也没注意到`<keep-alive></keep-alive>`这个组件,最近在深入的研究vue组件的生命周期函数,每一个函数都是干嘛的,然后其中有`activated`和`deactivated`这两个函数与`<keep-alive></keep-alive>`这个组件有关
 - `activated`: keep-alive组件激活时调用

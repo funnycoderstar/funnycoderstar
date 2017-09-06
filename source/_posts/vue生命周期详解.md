@@ -5,7 +5,7 @@ tags: vue
 type: "tags"
 categories: vue
 ---
-![title](http://upload-images.jianshu.io/upload_images/1541368-d9be1b3b39abc037?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![title](http://oo4xdz5i0.bkt.clouddn.com/vuelife.jpg)
 vue声明周期,在每个声明周期中都干了些什么?
 <!--more-->
 #### 1, vue的生命周期
@@ -93,4 +93,4 @@ vm.a = 'change';
 ```
 ![title](http://oo4xdz5i0.bkt.clouddn.com/vueUpdate.png)
 
-> `activated`和`deactivated`这两个生命周期函数涉及到`<keep-alive>`这个组件,所以想了解这个生命周期函数的可以看一下我的[另一篇文章](http://wangyaxing.top/2017/08/29/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%AF%A6%E8%A7%A3/#more)
+> `activated`和`deactivated`这两个生命周期函数涉及到`<keep-alive>`这个组件,所以想了解这个生命周期函数的可以看一下我的[另一篇文章](http://wangyaxing.top/2017/09/06/vue%E7%BB%84%E4%BB%B6%E4%B9%8Bkeep-alive/#more)
