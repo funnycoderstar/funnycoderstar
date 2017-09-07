@@ -82,6 +82,7 @@ body {
  .site-brand-wrapper {
    background-color: #FFD39B;
  }
+//  相册的样式
  #selfPhoto .fancybox img{
     background: #fff;
     display: inline-block !important;
@@ -92,15 +93,21 @@ body {
     width: 260px;
     border-radius: 5px;
 }
+// 相册样式需要清除浮动
 #selfPhoto .clear:before {
   display: block;
   clear: both;
   content: '';
 }
+// 评论列表的样式
 .comments{
   -webkit-box-shadow: 0 0 14px rgba(202,203,203,1);
   -moz-box-shadow: 0 0 14px rgba(202,203,204,1);
   background: #fff;
   padding: 25px;
   margin-bottom: 100px;
+}
+// 修改li list-style
+.posts-expand .post-body ul li {
+  list-style: disc;
 }
