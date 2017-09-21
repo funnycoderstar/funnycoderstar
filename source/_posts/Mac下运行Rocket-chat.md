@@ -54,7 +54,17 @@ npm config set registry https://registry.npm.taobao.org
 
 > 我在安装的过程中出现报错：
  ![](http://oo4xdz5i0.bkt.clouddn.com/phantomjs-error.png)
- 找了phantomjs[镜像](https://npm.taobao.org/mirrors/phantomjs)单独安装了一下速度很快，就成功了,😊
+ 找了phantomjs[镜像](https://npm.taobao.org/mirrors/phantomjs)单独安装了一下速度很快，就成功了,😊,然后把phantomjs添加到环境变量(方法如下)
+```
+1,cd phantomjs
+2,cd bin
+3,pwd     //注: 需要输出的复制地址
+4,cd ~    // 回到根目录
+5,vim .zshrc
+6,添加到path
+7,source .zshrc // 保存修改
+```
+> ![phantomjst添加到Path.png](http://upload-images.jianshu.io/upload_images/3297464-b97ab1ba31b426eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 > 运行成功命令行如下
 ![](http://oo4xdz5i0.bkt.clouddn.com/rocketChatSucess.png)
