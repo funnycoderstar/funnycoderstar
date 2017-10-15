@@ -1,9 +1,9 @@
 ---
 title: Mac下运行Rocket.chat
 date: 2017-09-17 13:18:03
-tags: [Rocket.chat, meteor]
-categories: [Rocket.chat, meteor]
-type: [Rocket.chat, meteor]
+tags: [meteor, Rocket.chat]
+categories: [meteor, Rocket.chat]
+type: [meteor, Rocket.chat]
 
 ---
 ![title](http://oo4xdz5i0.bkt.clouddn.com/rocketLogo.png-blogImg)
