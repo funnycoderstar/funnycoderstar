@@ -39,6 +39,7 @@ mongoose.model(' Task', Tasks);
 ``
 Mongoose的schema很强大.除了定义数据结构,还可以设定默认值,处理输入,以及加强校验
 3,添加任务
+schema注册好后,你可以访问它,让Mongoose去工作,下面的代码用模型添加了一项任务
 ```
 const Task = mongoose. model(' Task');
 const task = new Task();
@@ -51,6 +52,7 @@ task.save( function( err) {
 
 ```
 4,搜索文档
+Task模型的find方法可以用来查找所有文档,或者用一个JavaScript对象指明一个过滤标准来选择特定的文.下面这段代码搜索跟特定项目相关的任务,并输出每项任务的唯一ID和描述
 ```
 const Task = mongoose.model(' Task');
 Task.find({' project': 'Bikeshed'}, function( err, tasks) { 
@@ -62,6 +64,8 @@ Task.find({' project': 'Bikeshed'}, function( err, tasks) {
 
 ```
 5,更新文档
+尽管用模型的find方法可以定位一个文档,然后修改并保存它,但Mongoose还有一个update方法专门来做这个.
+下面的代码用Mongoose更新了一个新的文档
 
 ```
 const Task = mongoose. model(' Task');
@@ -77,6 +81,7 @@ Task.update(
 
 ```
 6,删除文档
+在Mongoose中,一旦你取到了文档,要删除它很容易.你可以用文档的内部ID(或其他任何条件,如果你用find代替finById的话)获取和删除文档,代码就像下面弄这样
 ```
 const Task = mongoose.model(' Task');
 Task.findById(' 4e65b3dce1592f7d08000001', function( err, task){
