@@ -33,5 +33,17 @@ git管理项目时,文件流转的三个工作区域:git的工作目录,暂存�
 - 在工作目录中初始化新仓库
 ```
 git init // 初始化后，在当前目录下会出现一个名为 .git 的目录，所有 Git 需要的数据和资源都存放在这个目录中
+git add README // 如果当前目录下有几个文件想要纳入版本控制,需要先用`git add`命令告诉git开始对这些文件进行跟踪,并进行提交
+git commit -m 'initial project version'
 ```
 - 从现有仓库克隆
+克隆仓库的命令格式为 git clone [url]。比如，要克隆 Ruby 语言的 Git 代码仓库 Grit，可以用下面的命令：
+```
+git clone git://github.com/schacon/grit.git
+```
+当前目录下创建一个名为`grit`的目录,其中包含一个`.git`的目录用于保存下载下来的所有版本记录,然后从中取出最新版本的文件拷贝
+如果希望在`git clone`的时候,自己定义要新建的项目目录的名称,可以再上面的命令的末尾指定新的名字
+```
+git clone git://github.com/schacon/grit.git mygrit
+```
+现在新建的目录就成了`mygrit`
