@@ -31,7 +31,7 @@ git管理项目时,文件流转的三个工作区域:git的工作目录,暂存�
 ## 取得项目的Git仓库
 有两种方法:1,在现存的目录下,通过导入所有文件来创建新的Git仓库;2,从已有的Git仓库克隆出一个新的镜像仓库
 - 在工作目录中初始化新仓库
-```
+```js
 git init // 初始化后，在当前目录下会出现一个名为 .git 的目录，所有 Git 需要的数据和资源都存放在这个目录中
 git add README // 如果当前目录下有几个文件想要纳入版本控制,需要先用`git add`命令告诉git开始对这些文件进行跟踪,并进行提交
 git commit -m 'initial project version'
@@ -47,3 +47,29 @@ git clone git://github.com/schacon/grit.git
 git clone git://github.com/schacon/grit.git mygrit
 ```
 现在新建的目录就成了`mygrit`
+
+## 文件状态
+`git status` 可以查看文件目前处于什么状态
+`git add xx` 这是一个多功能命,根据目标文件的状态不同,此命令的效果也不同;可以用它开始跟踪新文件,或者把已跟踪的文件放到暂存区,还能用于合并时把有冲突的文件标记为已解决状态
+
+## 忽略某些文件
+我们可以创建一个`.gitignore`的文件,列出要忽略的文件模式
+`.gitignore`的格式规范如下:
+- 所有空行或者以注释符号`#`开头的行都会被Git忽略
+- 可以使用标准的glob模式匹配(shell所使用的简化了的正则表达式)
+- 匹配模式最后跟反斜杠(/)说明要忽略的是目录
+- 要忽略指定模式以外的文件或目录,可以再模式前加上(!)取反
+
+```js
+# 此为注释 – 将被 Git 忽略
+    # 忽略所有 .a 结尾的文件
+    *.a
+    # 但 lib.a 除外
+    !lib.a
+    # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
+    /TODO
+    # 忽略 build/ 目录下的所有文件
+    build/
+    # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
+    doc/*.txt
+```
