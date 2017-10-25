@@ -73,3 +73,172 @@ git clone git://github.com/schacon/grit.git mygrit
     # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
     doc/*.txt
 ```
+## 查看已暂存和未暂存的更新
+```
+git diff
+git diff --cached
+```
+## 提交更新
+```
+git commit
+git commit -m'docs: change readme' // -m参数后跟提交的方式
+```
+[git commit 规范参考](https://blog.suisuijiang.com/git-commit-written-guide/)
+
+## 跳过使用暂存区域 `git commit -a -m'feat: add new tasks'`
+git 提供了一个跳过使用暂存区域的方式，只要在提交的时候给`git commit`加上`-a`选项，git就会自动把所有已经跟踪过的文件暂存起来一并提交，从而跳过 `git add `步骤
+```
+git commit -a -m'feat: add new tasks'
+```
+## 移除文件 `git rm`
+从git中移除某个文件，必须要从已跟踪文件清单移除（从暂存区域移除）,然后提交,`git rm`命令完成此项工作，并连带从工作目录中删除制定的文件，这样以后就不会出现在未跟踪文件清单了
+```
+git rm .test
+```
+如果是简单从工作目录中手工删除文件，仅删除了工作目录中的，仍在追踪名单中
+然后再运行 `git rm`记录此次移除文件的操作
+最后提交就不会被跟踪了。但是如果删除文件之前修改过且已经放到暂存区，则必须要加`-f`(即force的首字母)
+在实际项目中，经常会遇到下面的情况需要删除文件
+想把文件从git仓库中删除，但是仍希望保留在工作目录中，就是仅从跟踪清单中删除，比如一些大型日志或一堆.a的编译文件，不小心纳入仓库，但是要移除追踪但不删除文件，以便稍后在`.gitignore`文件中补上，加参数`--cached`
+```
+ git rm --cached readme.txt
+
+```
+后面可以列出文件或者目录的名字，也可以使用 glob 模式。
+注意到星号 * 之前的反斜杠 \，因为 Git 有它自己的文件模式扩展匹配方式，
+```
+git rm log/\*.log    // 此命令删除所有 log/ 目录下扩展名为 .log 的文件
+git rm \*~           //会递归删除当前目录及其子目录中所有 ~ 结尾的文件。必须加反斜杠
+
+```
+
+## 移动文件`git mv`
+```
+git mv file_from file_to
+```
+相当于运行
+```
+mv README.txt README
+git rm README.txt
+git add README
+```
+## 查看提交历史 `git log`
+```
+git log -p -2 // -p选项展开每次提交的内容差异， -2则仅显示最近两次更新， 做代码审查，或者快速浏览其他写作者提交的更新都做了哪些
+git log --stat // 仅显示简要的增改行数
+git log --pretty // 指定使用完全不同于默认风格的方式展示提交历史，比如`git log --pretty=oneline`将每个提示放在一行显示，另外还有short， full和fuller
+```
+#### format，可以定制要显示的记录格式，这样的输出便于后期编程提取分析
+```
+git log --pretty=format:"%h - %an, %ar : %s"
+ca82a6d - Scott Chacon, 11 months ago : changed the version number
+085bb3b - Scott Chacon, 11 months ago : removed unnecessary test code
+a11bef0 - Scott Chacon, 11 months ago : first commit
+```
+#### 用 oneline 或 format 时结合 --graph 选项，可以看到开头多出一些 ASCII 字符串表示的简单图形，形象地展示了每个提交所在的分支及其分化衍合情况
+```
+$ git log --pretty=format:"%h %s" --graph
+    * 2d3acf9 ignore errors from SIGCHLD on trap
+    * 5e3ee11 Merge branch 'master' of git://github.com/dustin/grit
+    |\
+    | * 420eac9 Added a method for getting the current branch.
+    * | 30e367c timeout code and tests
+    * | 5a09431 add timeout protection to grit
+    * | e1193f8 support for heads with slashes in them
+    |/
+    * d6016bc require time for xmlschema
+    * 11d191e Merge branch 'defunkt' into local
+```
+#### 列出了常用的格式占位符写法及其代表的意义。
+```
+选项 说明
+    %H 提交对象（commit）的完整哈希字串
+    %h 提交对象的简短哈希字串
+    %T 树对象（tree）的完整哈希字串
+    %t 树对象的简短哈希字串
+    %P 父对象（parent）的完整哈希字串
+    %p 父对象的简短哈希字串
+    %an 作者（author）的名字
+    %ae 作者的电子邮件地址
+    %ad 作者修订日期（可以用 -date= 选项定制格式）
+    %ar 作者修订日期，按多久以前的方式显示
+    %cn 提交者(committer)的名字
+    %ce 提交者的电子邮件地址
+    %cd 提交日期
+    %cr 提交日期，按多久以前的方式显示
+    %s 提交说明
+```
+#### 一些其他常用的选项及其释义。
+
+```
+选项 说明
+    -p 按补丁格式显示每个更新之间的差异。
+    --stat 显示每次更新的文件修改统计信息。
+    --shortstat 只显示 --stat 中最后的行数修改添加移除统计。
+    --name-only 仅在提交信息后显示已修改的文件清单。
+    --name-status 显示新增、修改、删除的文件清单。
+    --abbrev-commit 仅显示 SHA-1 的前几个字符，而非所有的 40 个字符。
+    --relative-date 使用较短的相对时间显示（比如，“2 weeks ago”）。
+    --graph 显示 ASCII 图形表示的分支合并历史。
+    --pretty 使用其他格式显示历史提交信息。可用的选项包括 oneline，short，full，fuller 和 format（后跟指定格式）。
+```
+#### 限制输入长度 --since 和 --unti
+```
+git log --since=2.weeks // 列出所有最近两周内的提交
+选项 说明
+    -(n) 仅显示最近的 n 条提交
+    --since, --after 仅显示指定时间之后的提交。
+    --until, --before 仅显示指定时间之前的提交。
+    --author 仅显示指定作者相关的提交。
+    --committer 仅显示指定提交者相关的提交。
+```
+如果要查看 Git 仓库中，2017 年 10 月期间，Junio Hamano 提交的但未合并的测试脚本（位于项目的 t/ 目录下的文件），可以用下面的查询命令
+```
+git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \
+```
+## 撤销操作
+#### 修改最后一次提交 `git commit --amend`
+```
+ git commit -m 'initial commit'
+ git add forgotten_file
+ git commit --amend
+```
+如果刚才提交时忘了暂存某些修改，可以先补上暂存操作，然后再运行 --amend 提交：上面的三条命令最终只是产生一个提交，第二个提交命令修正了第一个的提交内容。
+#### 取消已经暂存的文件 `git reset HEAD <file>...`
+有两个修改过的文件，我们想要分开提交，但不小心用 git add . 全加到了暂存区域。该如何撤消暂存其中的一个文件呢
+```
+git reset HEAD benchmarks.rb
+```
+#### 取消对文件的修改 `git checkout -- <file>..`
+如果觉得刚才对 benchmarks.rb 的修改完全没有必要，该如何取消修改，回到之前的状态（也就是修改之前的版本）呢
+```
+git checkout -- benchmarks.rb
+```
+
+任何已经提交到 Git 的都可以被恢复。即便在已经删除的分支中的提交，或者用 --amend 重新改写的提交，都可以被恢复（关于数据恢复的内容见第九章）。所以，你可能失去的数据，仅限于没有提交过的
+
+
+## 远程仓库的使用
+- 查看当前的远程库 `git remove -v`,名为 origin 的远程库，Git 默认使用这个名字来标识你所克隆的原始仓库
+- 添加远程仓库`git remote add [shortname] [url]`
+- 从远程仓库抓取数据`git fetch [remote-name]`
+- 推送数据到远程仓库 `git push [remote-name] [branch-name]`
+- 查看某个远程仓库信息`git remote show [remote-name]`
+- 远程仓库的删除和重命名 `git remote rename pb paul` `git remote rename rm [remote-name]`
+```
+git remove -v
+git remote add pb git://github.com/paulboone/ticgit.git
+git fetch pb // 
+git push origin master  //把本地的 master 分支推送到 origin 服务器上
+git remote show origin // 要看所克隆的 origin 仓库
+
+$ git remote rename pb paul
+    $ git remote
+    origin
+    paul
+
+git remote rm paul
+    $ git remote
+    origin
+```
+git fetch 命令只是将远端的数据拉到本地仓库，并不自动合并到当前工作分支,git pull 命令自动抓取数据下来，然后将远端分支自动合并到本地仓库中当前分支
