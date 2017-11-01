@@ -212,3 +212,5 @@ var pc = new RTCPeerConnection(iceServer);
 - [使用WebRTC搭建前端视频聊天室——信令篇](https://segmentfault.com/a/1190000000439103)
 - [使用WebRTC搭建前端视频聊天室——点对点通信篇](https://segmentfault.com/a/1190000000733774)
 - [使用WebRTC搭建前端视频聊天室——数据通道篇](https://segmentfault.com/a/1190000000733779)
+- [使用 WebRTC 构建简单的前端视频通讯](https://segmentfault.com/a/1190000005864228)
+- [直播和截图](http://ghmagical.com/article/page/id/3sHkVEi4K1JO)

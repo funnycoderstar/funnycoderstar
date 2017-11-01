@@ -6,5 +6,3 @@ tags: vue
 <!--more-->
 
 ```js
-
-```
