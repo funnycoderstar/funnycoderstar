@@ -300,6 +300,55 @@ git branch --no-merged // 筛选与当前分支尚未合并的分支，此时如
 ```
 ## 利用分支开发的工作流程
 ### 长期分支
-
-
+在master分支中保留完全稳定的代码，即已经发布或即将发布的代码，与此同时，还有一个名为develop或next的平行分支，专门用于后续的开发
+或仅用于稳定性测试 — 当然并不是说一定要绝对稳定，不过一旦进入某种稳定状态，便可以把它合并到 master 里。这样，在确保这些已完成的特性分支（短期分支，比如之前的 iss53 分支）能够通过所有测试，并且不会引入更多错误之后，就可以并到主干分支中，等待下一次的发布。
+你可以用这招维护不同层次的稳定性。某些大项目还会有个 proposed（建议）或 pu（proposed updates，建议更新）分支，它包含着那些可能还没有成熟到进入 next 或 master 的内容。这么做的目的是拥有不同层次的稳定性：当这些分支进入到更稳定的水平时，再把它们合并到更高层分支中去。
+### 特性分支
+一个特性分支是指一个短期的，用来实现单一特性或与其相关工作的分支。
 ## 远程分支
+远程分支是对远程仓库中分支的索引。
+(远程仓库)/(分支名)表示远程分支
+### 推送远程分支 
+git push (远程仓库名) (分支名)
+```
+ git push origin serverfix
+ Git 自动把 serverfix 分支名扩展为 refs/heads/serverfix:refs/heads/serverfix，意为“取出我在本地的 serverfix 分支，推送到远程仓库的 serverfix 分支中去”。
+仓库中去，仍旧称它为 server
+git push origin serverfix:serverfix
+上传我本地的 serverfix 分支到远程仓库中去，仍旧称它为 serverfix 分支
+
+git push origin serverfix:awesomebranch
+上传我本地的 serverfix 分支到远程仓库中去，称它为 awesomebranch 分支
+```
+如果要把该远程分支的内容合并到当前分支，可以运行 git merge origin/serverfix
+
+想要基于远程分支上新建一个新的分支 git checkout -b serverfix origin/serverfix
+
+### 跟踪远程分支
+
+从远程分支`checkout`出来的本地分支，成为跟踪分支。跟踪分支是一种和某个远程分支有直接联系的公司；
+克隆仓库时，git通常会自动创建一个名为`master`分支来跟踪`origin/master`;这正是 git push 和 git pull 一开始就能正常工作的原因
+
+ git checkout -b serverfix origin/serverfix 可以用 --track 简化:
+
+ git checkout --track origin/serverfix
+
+ 本地分支设定不同于远程分支的名字，只需在第一个版本的命令里换个名字:
+ git checkout -b sf origin/serverfix
+
+ ### 删除远程分支
+ git push [远程名] :[分支名]
+
+ git push [远程名] [本地分支]:[远程分支],如果省略 [本地分支]，如果省略 [本地分支]
+
+## 分支的衍合
+把一个分支整合到另一个分支的办法有两种: merge rebase
+使用衍合的目的是想要得到一个能在远程分支上干净应用的补丁,简单的说就是修改提交历史
+一旦分支中的提交对象发布到公共仓库，就千万不要对该分支进行衍合操作。
+```
+git rebase --onto master server client
+取出 client 分支，找出 client 分支和 server 分支的共同祖先之后的变化，然后把它们在 master 上重演一遍”
+
+git rebase [主分支] [特性分支] 命令会先取出特性分支 server，然后在主分支 master 上重演：
+git rebase master server
+```
