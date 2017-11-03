@@ -1,12 +1,13 @@
 ---
-title: git学习总结
-date: 2017-10-12 17:40:36
+title: 深入理解git系列
+date: 2017-11-02 17:40:36
 tags: git
 categories: [git]
 type: "tags"
 ---
-![title](http://static.open-open.com/lib/uploadImg/20141015/20141015084602_745.png)
+![title](http://oo4xdz5i0.bkt.clouddn.com/git1.png)
 <!--more-->
+文章参考: http://git.oschina.net/progit/
 # 1,git简介
 ## 版本控制
 简而言之,就是可以报存你所有的修改,所有的历史版本;有了它,就可以将某个文件回溯到之前的状态,甚至可以将整个项目回退到过去某个时间点的状态;你可以比较文件的变化细节，查出最后是谁修改了哪个地方，从而找出导致怪异问题出现的原因，又是谁在何时报告了某个功能缺陷等等
@@ -352,3 +353,5 @@ git rebase --onto master server client
 git rebase [主分支] [特性分支] 命令会先取出特性分支 server，然后在主分支 master 上重演：
 git rebase master server
 ```
+
+![git](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1509712673742&di=2068d0d393412331fd913b9c8020ddab&imgtype=0&src=http%3A%2F%2Fimg.kuqin.com%2Fupimg%2Fallimg%2F151228%2F20221CG3-2.png)

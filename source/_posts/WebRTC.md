@@ -1,7 +1,12 @@
 ---
 title: WebRTC
-tags:
+date: 2017-11-02 10:00
+tags: WebRTC
+categories: [WebRTC]
+type: "tags"
 ---
+![WebRTC](https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1501983814,3993636694&fm=27&gp=0.jpg)
+<!--more-->
 # 1,WebRTC入门基础
 ## 什么是WebRTC
 
