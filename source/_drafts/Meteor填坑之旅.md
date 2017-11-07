@@ -7,6 +7,8 @@ tags:
 [meteor insert document event](https://stackoverflow.com/questions/29022760/meteor-event-for-subscriber-of-collection-for-new-insert-of-document-in-mongodb)
 [METEOR COLLECTIONFS – GET NOTIFIED WHEN A FILE STORAGE COMPLETES](https://krishprasadar.wordpress.com/)
 [Meteor-CollectionFS](https://github.com/CollectionFS/Meteor-CollectionFS/issues/264)
+
+我的实现方法: 每条消息加一个ReadedMembers字段,记录消息是谁已经读过了,如果 `ReadedMembers.includes(selfId)`的值为false,就表明当前消息你还未读,依次来表示未读消息
 ## 2,Meteor和socket.io结合使用,总是重复的自己断开,自己连接
 ## 3, 取出populate关联表数据
 
@@ -52,3 +54,7 @@ const PopulateUtil = {
 
 export default PopulateUtil;
 ```
+4,`import { withTracker } from 'meteor/react-meteor-data';`withTracker用来跟踪数据,但是存在数据异步更新的问题:
+
+点击删除的时候,将所有未读消息变为已读,但是allUnReload此时不会立刻更新数据,
+所以有未读消息时点击删除事此时这个消息列表已经删除,但是此时未读消息条数不会立刻更新,判断有未读消息,不存在该聊天窗口,则创建新的聊天窗口,过了一会数据更新了,未读消息为0
