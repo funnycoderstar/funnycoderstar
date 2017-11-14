@@ -1,34 +1,13 @@
 ---
-title: react之无状态组件
-date: 2017-11-07 21:45:30
-tags: react
+title: 初探React生命周期
+date: 2017-11-14 13:14:27
+tags: React
+categories: React
+type: "React"
 ---
-
-1,react简介
-React把用户界面抽象成一个组件，比如按钮组件Button,对话框组件Dialog,日期组件Calendar.开发者通过组合这些组件，最终得到功能丰富，可交互的页面
-## 专注视图层
-React专注于提供清晰，简洁的view层解决方案。
-## Virtual DOM 
-真实页面对应一个DOM树，在传统页面的开发模式中，每次需要更新页面时，都需要自动操作DOM来进行更新。
-DOM操作非常昂贵，性能消耗最大的就是DOM操作，而且这部分代码会变得难以维护。React把真实DOM树转换成JavaScript对象树，也就是Virtual DOM
-## 函数式编程
-
-2，JSX语法
-## JSX的由来
-React通过更新和构建`虚拟元素`来管理整个Virtual DOM的.
-虚拟元素为真实元素的对应,它的构建和更新都是在内存中完成的,并不会真正渲染到DOM中.
-React中创建的虚拟元素可以分为两类,DOM元素和组件元素,分别对应着虚拟DOM元素与自定义元素;
-1,DOM元素
-2,组件元素
-## JSX基本语法
-3，react组件
-## 组件的演变
-## React组件的构建
-4，react数据流
-## state
-## props
-
-5，react生命周期
+![title](http://static.open-open.com/lib/uploadImg/20151028/20151028165606_134.jpg)
+<!--more-->
+# react生命周期
 ## 挂载和卸载过程
 1,组件挂载是最基本的过程,这个过程主要做组件状态的初始化.
 ```js
@@ -118,9 +97,8 @@ export default App;
 - 如果组件是由父组件更新props而更新的,那么在shouldComponentUpdate之前会先执行componentWillReceiveProps方法,此方法可以作为React在props传入后,渲染之前setState的机会,在此方法中调用setState是不会二次渲染的
 ## 整体流程
 React的生命周期流程我们用一张图来表示
-![react生命周期整体流程图](http://oo4xdz5i0.bkt.clouddn.com/reactLife.jpeg)
-6，react与DOM
-## ReactDOM
-## ReactDOM的不稳定性
-## refs
-## React之外的DOM操作
+![react生命周期](http://oo4xdz5i0.bkt.clouddn.com/reactLife.jpeg)
+
+## About
+[github](https://github.com/funnycoderstar)
+[blog](http://wangyaxing.top/)
