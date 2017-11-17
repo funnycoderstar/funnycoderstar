@@ -64,3 +64,75 @@ function test() {
 }
 test(); //global
 ```
+## 来两道题检查你是否掌握了
+#### example1
+```js
+const length = 10;
+function fn() {
+ console.log(this.length);
+}
+
+const  obj = {
+    length: 5,
+    method: function(fn) {
+    fn();
+    arguments[0]();
+    }
+};
+
+obj.method(fn, 1);
+
+```
+输出 10, 2
+
+刚开始看到这道题我也是蒙蒙的,现在也终于理解了,
+method这个函数传入了两个参数,一个参数为fn(),fn()为普通函数,this指向函数的调用者,此时指向全局(也可以看这个函数前面没有`点`),所以运行结果为10,arguments是函数的所有参数,是一个类数组的对象,arguments[0](),可以看成是arguments.0(),调用这个函数的是arguments,此时this就是指`arguments`,this.length就是angument.length,就是传入的参数的总个数2
+
+注: 上面例子在node环境中的运行结果为 undefined 2, `const length = 10`改成`global.length = 10;`是因为node环境下定义在全局的变量不会绑定到global,浏览器也会自动绑定到全局环境window
+
+改成下面这样结果又是什么呢?
+```js
+const length = 10;
+
+function fn() {
+    console.log(this.length);
+}
+
+const obj = {
+    length: 5,
+    method: function(fn) {
+        fn();
+        const fun = arguments[0];
+        fun()；
+    }
+};
+
+obj.method(fn, 1);
+```
+10, 10
+
+
+#### example 2 
+
+```js
+window.val = 1;
+var obj = {
+    val: 2,
+    dbl: function() {
+        this.val *= 2;
+        val *= 2;
+        console.log(val);
+        console.log(this.val);
+    }
+}
+obj.dbl(); // 2 4
+var func = obj.dbl;
+func(); // 8 8
+```
+这个就是有点绕了,不过一步步来分析就很容易理解了:
+
+`obj.dbl()`;执行这行代码时，this指的是`obj`，所以`this.val === obj.val*=2`,最后结果为`4`,`val*=2 === window.val *= 2`，最后结果是`2`
+
+`func()`，执行这行代码时，`func()`没有任何前缀，`this`指的是`window.func()`;所以此时this值得是`window`，`this.val === window.val *= 2`,此时`window.val` 为`4`，`val*=2 === window.val *2`,最后结果为`8`，最后`console.log(this.val)`,与`console.log(val)`,指的都是`window.val`，最后结果都是`8`
+
+
