@@ -95,11 +95,11 @@ scheme: Pisces
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
-  GitHub: https://github.com/funnycoderstar
+  gitHub: https://github.com/funnycoderstar
   # 知乎: https://www.zhihu.com/people/wang-ya-xing-38/activities
   简书: http://www.jianshu.com/u/92fec6da2d1a
-  # 掘金: https://juejin.im/user/58c6a15544d9040068046025
-  # 简历: https://hacknical.com/resume/S1VKezRp-?locale=zh
+  掘金: https://juejin.im/user/58c6a15544d9040068046025
+  简历: https://hacknical.com/resume/S1VKezRp-?locale=zh
 
 # Social Links Icons
 # Icon Mapping:
@@ -112,7 +112,7 @@ social_icons:
   transition: false
   # Icon Mappings.
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
-  GitHub: github
+  gitHub: github
   E-Mail: envelope
   Google: google
   Twitter: twitter
@@ -123,6 +123,9 @@ social_icons:
   Instagram: instagram
   StackOverflow: stack-overflow
   Weibo: weibo
+  简历: user-md
+  简书: compass
+  掘金: pencil
 
 # Blog rolls
 #links_title: Links
