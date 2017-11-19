@@ -4,7 +4,9 @@ date: 2017-08-09 14:04:36
 type: 'about'
 ---
 ![title](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503974329&di=1d9b75f4b068d20bfcb7e94fbd591e43&imgtype=jpg&er=1&src=http%3A%2F%2Fcdnq.duitang.com%2Fuploads%2Fitem%2F201401%2F01%2F20140101135925_nFh5B.jpeg)
-我,一个在北京慢慢前行的程序媛;
+
+[个人简历](https://hacknical.com/resume/S1VKezRp-?locale=zh)
+
 
 很高兴大家来到我的博客,首先我不是什么前端大牛,但是很想成为大牛的程序媛;
 
@@ -30,3 +32,4 @@ type: 'about'
 
 <img src="http://oo4xdz5i0.bkt.clouddn.com/wechat.jpg" style="width: 300px;"/>
 ......
+

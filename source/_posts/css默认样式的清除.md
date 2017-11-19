@@ -66,6 +66,6 @@ textarea{
   `border:0;` 去掉border
 - `textarea{resize:none}`取消chrome下textarea可拖动放大：
 ## About
-[aboutme](http://wangyaxing.deercv.com/)
+[aboutme](https://hacknical.com/resume/S1VKezRp-?locale=zh)
 [github](https://github.com/funnycoderstar)
 [blog](http://wangyaxing.top/)

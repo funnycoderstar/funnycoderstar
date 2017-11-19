@@ -1,9 +1,9 @@
 ---
 title: 初探React生命周期
 date: 2017-11-14 13:14:27
-tags: React
-categories: React
-type: "React"
+tags: react
+categories: react
+type: "react"
 ---
 ![title](http://static.open-open.com/lib/uploadImg/20151028/20151028165606_134.jpg)
 <!--more-->
