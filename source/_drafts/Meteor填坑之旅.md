@@ -59,6 +59,8 @@ export default PopulateUtil;
 点击删除的时候,将所有未读消息变为已读,但是allUnReload此时不会立刻更新数据,
 所以有未读消息时点击删除事此时这个消息列表已经删除,但是此时未读消息条数不会立刻更新,判断有未读消息,不存在该聊天窗口,则创建新的聊天窗口,过了一会数据更新了,未读消息为0
 
+结果不是withTracker的问题,是上面写的一个函数存在异步问题
+
 5, 
 ```js
 getHighlightedText = (text, higlight) => {
