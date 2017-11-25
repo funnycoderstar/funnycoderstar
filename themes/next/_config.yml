@@ -6,7 +6,7 @@
 favicon: images/star.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+keywords: "王亚星,wangyaxing,前端,前端工程师,博客,react,vue,微信小程序"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -137,7 +137,7 @@ social_icons:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-avatar: /images/avatar.jpg
+avatar: /images/avatar1.jpeg
 
 # Table Of Contents in the Sidebar
 toc:
