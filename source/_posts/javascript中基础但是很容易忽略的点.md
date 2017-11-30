@@ -2,10 +2,11 @@
 title: javascript中基础但是很容易忽略的点(一)
 date: 2017-11-27 16:11:44
 tags: javascript
+categories: javascript
 ---
-![title](http://img.mp.itc.cn/upload/20160714/5f2f7531f4ea4fc9b0ed7001e5d934bf_th.png)
-<!--more-->
+![title](http://oo4xdz5i0.bkt.clouddn.com/zhuangzhu.png)
 引言: 本篇文章主要总结了一些javascript中特别基础的内容,主要涉及到`DOM0级和DOM2级事件`,`事件流`, `事件委托`, `判断变量的类型`每次被问到,总是能想起一点,但是也总记不全,所以遇到这种情况的时候,就简单的记录一下.
+<!--more-->
 
 ## DOM0级事件和DOM2级事件的区别
 ### DOM0事件
@@ -35,15 +36,14 @@ btn.onclick = null;
 > addEventListener()可以为元素添加多个处理程序函数,触发时按照添加顺序依次调用;removeEventLister()不能移除匿名添加的函数
 
 ### DOM0级事件和DOM2级事件的区别
-DOM0级只能覆盖，不会连续触发！
-像上面把onclick写在标签内，都是dom0级事件，fn和fn1依次执行; 第二种获取元素，绑定onclick事件也是dom0级，第二个会覆盖第一个onclick，也会覆盖行内的onclick，只会弹出222。
-以上的绑定都属于dom2级事件绑定，前面两种都是jq的绑定方式，后面都是原生js的绑定方式，不会覆盖，会依次执行jq的绑定方法和原生的绑定方法，这就是于dom0级的去别处；
+在一个标签上绑定多个事件处理程序,DOM0级只能覆盖,不会连续触发,但是DOM2级事件就不会出现这样的情况,它不会被覆盖,而且会连续触发
 
 ## 事件流
 - 事件冒泡: 事件开始时是从最具体的元素接受,然后逐级向上传播: 比如点击了div, div->body->html->Document
 - 事件捕获: 和事件冒泡相反,从最外面的元素向下传播: 比如同样点击了div: Document->html->body->div
-“DOM2级事件”，规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。首先是事件捕获阶段；然后是实际的目标接收到事件。最后一个阶段是冒泡阶段，可以在这个阶段对事件作出相应。
-![事件流](https://www.w3.org/TR/DOM-Level-3-Events/images/eventflow.svg)
+
+事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。首先是事件捕获阶段；然后是实际的目标接收到事件。最后一个阶段是冒泡阶段，可以在这个阶段对事件作出相应。
+![事件流](http://oo4xdz5i0.bkt.clouddn.com/event.jpg)
 所有的浏览器都支持冒泡,我们通常使用事件冒泡,很少使用事件捕获
 
 ## 事件委托(事件代理)及使用场景
@@ -149,19 +149,6 @@ Object.prototype.toString.call(new Date); // "[object Date]"
 Object.prototype.toString.call([]); // "[object Array]"
 Object.prototype.toString.call(/reg/ig); // "[object RegExp]"
 ```
-## 跨域方法
-js跨域是指js在不同的域之间进行数据传输或通信进行数据传输或通信,原因是浏览器都有一个[同源策略](https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy),限制之一为不能通过ajax的方法去请求不同源中的文档,限制之二是浏览器中不同域中的框架(iframe)之间也是不能进行js的交互操作的;
-只要协议,域名,端口有任何一个不同,都被当做不同的域
-### jsonp跨域
-### document.domain跨子域
-### window.name来进行跨域
-### HTML5中的window.postMessage
-window.postMessage(message, targetOrigin), 第一个参数是message为要发送的消息,类型只能为String,第二个参数targetOrigin用来限定接受消息的那个window对象所在的域,如果不想限定,可以使用通配符*;
-
-
-## 作用域
-
 ## 参考
 [JavaScript中判断对象类型的几种方法总结](http://www.jb51.net/article/43032.htm)
 [js中的事件委托或是事件代理详解](http://www.cnblogs.com/liugang-vip/p/5616484.html)
-[js中几种实用的跨域方法原理详解](https://www.cnblogs.com/2050/p/3191744.html)
