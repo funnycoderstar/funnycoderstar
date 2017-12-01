@@ -61,7 +61,7 @@ export default PopulateUtil;
 
 结果不是withTracker的问题,是上面写的一个函数存在异步问题
 
-5, 
+5, 代码高亮
 ```js
 getHighlightedText = (text, higlight) => {
         // Split on higlight term and include term into parts, ignore case
@@ -73,3 +73,29 @@ getHighlightedText = (text, higlight) => {
         } </span>);
     }
 ```
+6, 如何在Meteor.call()改为promise,async/await形式
+方法一:
+```js
+function callMeteorMethod(methodName, ...args) {
+    return new Promise((resolve, reject) => {
+        Meteor.call(methodName, ...args, (error, result) => {
+            if (error) reject(error)
+            else resolve(result)
+        })
+    })
+}
+
+
+async function main() {
+    let result = await callMeteorMethod('foo', 1, 2, 3)
+    console.log(result)
+}
+
+main()
+```
+方法二:
+
+```js
+meteor add deanius:promise
+```
+[](https://forums.meteor.com/t/start-using-async-await-instead-of-promises-and-callbacks/17037/5)
