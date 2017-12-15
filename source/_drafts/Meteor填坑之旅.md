@@ -1,6 +1,6 @@
 ---
 title: Meteor 填坑之旅
-tags:
+tags: Meteor
 ---
 ## 1,是否有一个事件可以出发,放插入一条新的消息,我可以订阅?
 做一个聊天的功能,当有新消息插入到数据库时,我需要判断当前聊天是否存在于用户的聊天列表中(如果不存在也需要创建有新消息的聊天)以及在这个页面做声音,但是Meteor的前后端数据都是响应的,后端数据增加,前端数据自动更新显示.是否有一个事件可以出发,放插入一条新的消息,我可以订阅?
@@ -9,8 +9,7 @@ tags:
 [Meteor-CollectionFS](https://github.com/CollectionFS/Meteor-CollectionFS/issues/264)
 
 我的实现方法: 每条消息加一个ReadedMembers字段,记录消息是谁已经读过了,如果 `ReadedMembers.includes(selfId)`的值为false,就表明当前消息你还未读,依次来表示未读消息
-## 2,Meteor和socket.io结合使用,总是重复的自己断开,自己连接
-## 3, 取出populate关联表数据
+## 2, 取出populate关联表数据
 
 Message 表的 from 字段关联到了 User 表, 默认情况下查询结果的 from 字段是 user id, 而我们需要的是该 user 的数据. 我们使用 [reywood:publish-composite](https://atmospherejs.com/reywood/publish-composite) 获取关联表数据, 例如取出 message 的 from 字段的数据:
 
@@ -54,14 +53,7 @@ const PopulateUtil = {
 
 export default PopulateUtil;
 ```
-4,`import { withTracker } from 'meteor/react-meteor-data';`withTracker用来跟踪数据,但是存在数据异步更新的问题:
-
-点击删除的时候,将所有未读消息变为已读,但是allUnReload此时不会立刻更新数据,
-所以有未读消息时点击删除事此时这个消息列表已经删除,但是此时未读消息条数不会立刻更新,判断有未读消息,不存在该聊天窗口,则创建新的聊天窗口,过了一会数据更新了,未读消息为0
-
-结果不是withTracker的问题,是上面写的一个函数存在异步问题
-
-5, 代码高亮
+3, 代码高亮
 ```js
 getHighlightedText = (text, higlight) => {
         // Split on higlight term and include term into parts, ignore case
@@ -73,7 +65,7 @@ getHighlightedText = (text, higlight) => {
         } </span>);
     }
 ```
-6, 如何在Meteor.call()改为promise,async/await形式
+4, 如何在Meteor.call()改为promise,async/await形式
 方法一:
 ```js
 function callMeteorMethod(methodName, ...args) {
@@ -99,3 +91,11 @@ main()
 meteor add deanius:promise
 ```
 [](https://forums.meteor.com/t/start-using-async-await-instead-of-promises-and-callbacks/17037/5)
+[deanius/meteor-promise](https://github.com/deanius/meteor-promise)
+
+更多坑待填...
+
+5,Meteor实现数据实时响应的原理
+
+6,Meteor和socket.io结合使用,总是重复的自己断开,自己连接
+7,写文件名的时候层级过长,有没有一种方法可以想vue,那套可以配置,用@代替的
