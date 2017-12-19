@@ -54,7 +54,7 @@ new Promise(resolve => resolve('foo))
 (1) 参数是Promise实例
 如果参数是Promise实例,那么Promise.resolve将不做任何修改,原封不动的返回这个实例
 (2)参数是一个thenable对象
-```
+```js
 let thenable = {
     then: function(resolve, reject) {
         resolve(42);
@@ -63,10 +63,55 @@ let thenable = {
 ```
 Promise.resolve方法会将这个对象转为Promise对象,然后立即执行thenable对象的then方法
 (3) 参数不是具有then方法的对象,或根本不是对象
-```
+```js
 const p = Promise.resolve('Hello');
 p.then(function(s) {
     console.log(s); //  Hello
 })
 ```
 Hello不属于异步操作(判断方法是字符串对象不具有then方法),返回Promise实例的状态从一生成就是resolved,所以回调函数会立即执行.Promise.resolve方法的参数,会同时传给回调函数
+(4) 不带有任何参数
+Promise.resove方法允许调用时不带参数,直接返回一个resolved状态的Promise对象
+```js
+setTimeout(function() {
+    console.log('three');
+}, 0);
+
+Promise.resolve().then(function() {
+    console.log('two');
+});
+
+console.log('one');
+
+// one
+// two
+// three
+```
+上面代码中, setTimeout(fn, 0)在下一轮"事件循环"开始执行, Promise.resolve()在本轮"事件循环"结束时执行,console.log('one')则是立即执行,因此最先输出
+
+## 8. Promise.reject()
+
+## 9. 两个有用的附加方法
+Promise.done()
+
+Promise对象的回调链,不管以then方法或者catch方法结尾,要是最后一个方法抛出错误,都有可能无法捕捉到(因为Promise内部的错误不会冒泡到全局),因此我们可以提供一个done方法,总是处于回调链的尾端,保证抛出任何可能的错误
+```js
+asyncFunc()
+  .then(f1)
+  .catch(r1)
+  .then(f2)
+  .done();
+```
+finally()
+
+finally方法用于指定不管Promise对象最后状态如何,都会执行的操作,它与done方法的最大区别,接受一个普通的回调函数作为参数,该函数不管怎样都必须执行.
+下面是一个例子,服务器使用Promise处理请求,然后使用finally方法关掉服务器
+
+```js
+server.listen(0)
+ .then(function() {
+
+ })
+ .finally(server.stop);
+```
+
