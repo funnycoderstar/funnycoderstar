@@ -1,0 +1,129 @@
+---
+title: eslint配置
+date: 2017-12-28 18:49:05
+tags: [eslint]
+categories: eslint
+type: "eslint"
+---
+![eslint](https://1.bp.blogspot.com/-A51PhexpQ20/WTRZgR7ZzqI/AAAAAAAABC4/Yjuq2S4UODc7Z1t31MWOWtDyZ2N0n8whACLcB/s1600/f590050bbc2c4fe4d26e7d02dfa48666.jpg)
+
+<!--more-->
+## eslint配置
+
+全局安装
+```js
+npm install -g eslint
+```
+局部安装
+```js
+npm i -D eslint
+```
+接下来新建一个配置文件.eslintrc.js,或执行以下命令自动生成
+```js
+eslint --init
+```
+## 制定环境
+要指定配置文件中的环境，请使用env键并指定要启用的环境true。例如，以下启用浏览器和Node.js环境：
+```js
+{
+    "env": {
+        "browser": true,
+        "node": true
+    }
+}
+```
+或者在一个package.json文件中
+```js
+{
+    "name": "mypackage",
+    "version": "0.0.1",
+    "eslintConfig": {
+        "env": {
+            "browser": true,
+            "node": true
+        }
+    }
+}
+```
+## 配置规则
+ESLint带有大量的规则。您可以使用配置注释或配置文件修改您的项目使用的规则。要更改规则设置，您必须将规则ID设置为以下值之一：
+
+- "off"或者0- 关闭该规则
+- "warn"或者1- 将规则打开为警告（不影响退出代码）
+- "error"或者2- 将规则打开为错误（触发时退出代码为1）
+
+### 通过内联注释禁用规则
+- 要在整个文件中禁用规则警告，请在文件/* eslint-disable */顶部添加块注释：
+
+```
+/* eslint-disable */
+
+alert('foo');
+```
+- 要禁用特定行上的所有规则，请使用以下格式之一的行注释：
+
+```
+alert('foo'); // eslint-disable-line
+
+// eslint-disable-next-line
+alert('foo');
+```
+
+### 制定全局
+
+> 可以使用文件内部的注释或配置文件来定义全局变量。
+
+####  1.使用文件内部注释
+
+(1).要在JavaScript文件中使用注释来指定全局变量，请使用以下格式
+```
+/* global var1, var2 */
+```
+(2).如果你想要指定这些全局变量不应该被写入（只读），那么你可以设置每个false标志：
+```
+/* global var1:false, var2:false */
+```
+#### 2.要在配置文件中配置全局变量，请使用globals键并指示要使用的全局变量。将每个全局变量名称设置为等于true允许覆盖变量或false禁止覆盖。例如：
+
+```js
+{
+    "globals": {
+        "var1": true,
+        "var2": false
+    }
+}
+```
+
+## 使用心得
+目前使用vscode,安装eslint插件,然后在配置中加入关于eslint的配置
+```js
+{
+    "eslint.autoFixOnSave": true,
+    "eslint.enable": true,
+    "eslint.options": {
+       "extensions": [".js", ".vue", ".jsx"]
+    },
+    "eslint.validate": [
+        {
+          "language": "vue",
+          "autoFix": true
+        },
+        {
+          "language": "javascript",
+          "autoFix": true
+        },
+        {
+          "language": "javascriptreact",
+          "autoFix": true
+        }
+    ],
+}
+```
+`"eslint.autoFixOnSave": true,`配置完这个之后,当你在保存的时候可以自动按照你在`.eslintrc.js`目录中设置的规则自动修复一些空格缩进,单双引号及语句末尾是否需要加`;`或`,`的一些错误,但是有一些错误,比如变量声明未定义等得需要你手动去修改.
+
+刚开始用到eslint的时候也是相当痛苦,毕竟在代码中看到一大堆红线(注: 红线为eslint的错误,鼠标划上去就会看到对应的违反了哪个规则,可以去eslint的官网查看),但是当你养成良好的习惯之后,这些习惯包括变量命名,函数命名等,其实会大大的提高工作效率,规范起来之后尤其会提高团队之前的工作效率.
+
+我现在就有严重的代码洁癖,看到整洁的代码,心情就会十分愉悦.当然在看到团队有小伙伴一点都不注意这些,尤其需要忙他debug的时候,真的很难受,变量命名a,b, a1等.所以哪怕为了不坑团队成员的,也要养成良好的习惯.
+
+## 参考
+- [eslint.org/docs/](https://eslint.org/docs/user-guide/configuring#specifying-environments)
