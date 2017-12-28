@@ -1,6 +1,9 @@
 ---
 title: 前端路由history vs hash
+date: 2017-9-10 13:18:03
 tags: javascript
+categories: javascript
+type: "javascript"
 ---
 ![](http://7xr2s7.com1.z0.glb.clouddn.com/%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%861.jpg)
 <!--more-->
