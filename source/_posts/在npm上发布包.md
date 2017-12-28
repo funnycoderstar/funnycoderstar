@@ -1,9 +1,13 @@
 ---
 title: 在npm上发布包
 date: 2017-12-27 20:27:24
-tags:
+tags: [npm]
+categories: npm
+type: "npm"
 ---
+![npm](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1514467983152&di=7f18195395ae333a47a666a961858759&imgtype=0&src=http%3A%2F%2Fwww.yaohzone.com%2Fupload%2F2016_11%2F1478274881940%40yaohzone.png)
 
+<!--more-->
 
 # 在npm上发布自己的包
 ## 发布包
