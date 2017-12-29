@@ -55,14 +55,14 @@ ESLint带有大量的规则。您可以使用配置注释或配置文件修改�
 ### 通过内联注释禁用规则
 - 要在整个文件中禁用规则警告，请在文件/* eslint-disable */顶部添加块注释：
 
-```
+```js
 /* eslint-disable */
 
 alert('foo');
 ```
 - 要禁用特定行上的所有规则，请使用以下格式之一的行注释：
 
-```
+```js
 alert('foo'); // eslint-disable-line
 
 // eslint-disable-next-line
@@ -76,11 +76,11 @@ alert('foo');
 ####  1.使用文件内部注释
 
 (1).要在JavaScript文件中使用注释来指定全局变量，请使用以下格式
-```
+```js
 /* global var1, var2 */
 ```
 (2).如果你想要指定这些全局变量不应该被写入（只读），那么你可以设置每个false标志：
-```
+```js
 /* global var1:false, var2:false */
 ```
 #### 2.要在配置文件中配置全局变量，请使用globals键并指示要使用的全局变量。将每个全局变量名称设置为等于true允许覆盖变量或false禁止覆盖。例如：
