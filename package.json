@@ -6,7 +6,8 @@
     "version": "3.4.4"
   },
   "scripts": {
-    "copy": "cp -r  public/* ~/Desktop/deploy"
+    "publish": "hexo clean && hexo -g && cp -r public/* ../deploy && cd ../deploy && npm run gitpush",
+    "gitpush": "node ./git.js"
   },
   "dependencies": {
     "hexo": "^3.2.0",
@@ -23,6 +24,8 @@
     "hexo-renderer-marked": "^0.3.0",
     "hexo-renderer-stylus": "^0.3.1",
     "hexo-server": "^0.2.0",
-    "hexo-wordcount": "^3.0.2"
+    "hexo-wordcount": "^3.0.2",
+    "shelljs": "^0.7.8",
+    "yargs": "^10.0.3"
   }
 }
