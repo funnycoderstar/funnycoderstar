@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.3.8"
+    "version": "3.4.4"
   },
   "scripts": {
-    "publish": "hexo clean && hexo -g && cp -r public/* ../deploy && cd ../deploy && npm run gitpush",
+    "publish": "hexo clean && hexo g && cp -r public/* ../deploy && npm run gitpush",
     "gitpush": "node ./git.js"
   },
   "dependencies": {

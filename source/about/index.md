@@ -50,7 +50,7 @@ type: 'about'
 <img src="http://oo4xdz5i0.bkt.clouddn.com/wechat.jpg" style="width: 300px;"/>
 ......
 
-既然你都看到这儿了,那我就给你来点福利吧,分享一个稳定的免费翻墙的软件:
+既然你都看到这儿了,那我就给你来点福利吧,分享一个稳定的mac下免费翻墙的软件:
 [百度网盘ssr](http://pan.baidu.com/s/1gfpgBXh): 密码:ec3s
 如果不知道怎么配置或者已经过期或者被墙了,可以加我微信联系我😝,总之很开心在这里与你相遇,在这里认识你.
 ![title](http://img.mp.itc.cn/upload/20170330/a34fad0d33424d6dba8b9bd67be88719.jpg)

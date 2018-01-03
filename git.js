@@ -6,9 +6,8 @@ if(!shell.which('git')) {
     shell.exit(1);
 }
 const argv = yargs.argv._;
-console.log(777, argv[0]);
-
+cd('../deploy');
 exec('git add .');
 exec('git commit -m' +`feat:`+ `${argv[0]}`);
-exec('git pull');
+// exec('git pull');
 exec('git push');
