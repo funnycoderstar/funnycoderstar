@@ -5,7 +5,7 @@ tags: [eslint]
 categories: eslint
 type: "eslint"
 ---
-![eslint](https://1.bp.blogspot.com/-A51PhexpQ20/WTRZgR7ZzqI/AAAAAAAABC4/Yjuq2S4UODc7Z1t31MWOWtDyZ2N0n8whACLcB/s1600/f590050bbc2c4fe4d26e7d02dfa48666.jpg)
+![eslint](http://cdn.wangyaxing.top/Eslint.jpg)
 
 <!--more-->
 ## eslint配置
