@@ -5,6 +5,7 @@ tags: vue
 type: "tags"
 categories: vue
 ---
+![title](http://upload-images.jianshu.io/upload_images/1541368-d9be1b3b39abc037?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 数组中当你利用索引设置一个项时,发现视图不发生变化
 

@@ -5,7 +5,7 @@ tags: node
 categories: [node]
 type: "tags"
 ---
-
+![title](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1518340049320&di=6ae86448732258b117fb5a7a2d70b3f6&imgtype=0&src=http%3A%2F%2Fi1.hdslb.com%2Fbfs%2Farchive%2F88d701b2b78445f2c4be2f16b1025edca196b59b.jpg)
 ## Node.js 命令行程序开发
 
 问题: 1.一些重复性的工作能否用脚本来实现? 2.实现自动化发布流程
