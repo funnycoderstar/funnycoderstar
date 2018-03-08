@@ -1,5 +1,5 @@
 ---
-title: 使用rollup.js打包javasript
+title: 使用Rollup打包JavaScript
 date: 2018-03-07 20:12:33
 tags: javascript
 categories: javascript
