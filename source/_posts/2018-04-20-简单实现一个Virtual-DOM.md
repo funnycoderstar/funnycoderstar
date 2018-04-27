@@ -1,13 +1,9 @@
----
-title: 简单实现一个Virtual DOM
-date: 2018-04-23 11:52:15
-tags:
----
 ## 前言
 之前写过一篇文章[为什么使用v-for时必须添加唯一的key?](http://wangyaxing.top/2018/03/18/2018-03-18-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8v-for%E6%97%B6%E5%BF%85%E9%A1%BB%E6%B7%BB%E5%8A%A0%E5%94%AF%E4%B8%80%E7%9A%84key/),但是解释的不是很深刻，其实真正的原因还需要从Virtual DOM的实现上解释；本篇文章从简单实现一个Virtual DOM入手，去解释一下Virtual DOM的实现思想;
 
 源码地址：[github](https://github.com/funnycoderstar/simple-virtual-dom)
 
+<!--more-->
 ## 思路
 1.定义一个类,用来创建 DOM 元素(element.js);
 
@@ -155,13 +151,15 @@ patch.NODE_ATTRIBUTE_DELETE = 'NODE_ATTRIBUTE_DELETE'; // 删除属性
 
 #### 深度优先遍历,记录差异
 
-首先简单解释一下什么是深度优先遍历和广度优先遍历:
+> 首先简单解释一下什么是深度优先遍历和广度优先遍历:
 
 ![dep.png](https://upload-images.jianshu.io/upload_images/3297464-e818c608d2752bef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
  对于一颗二叉树，深度优先搜索(Depth First Search)是沿着树的深度遍历树的节点，尽可能深的搜索树的分支。以上面二叉树为例，深度优先搜索的顺序为：ABDECFG。怎么实现这个顺序呢 ？深度优先搜索二叉树是先访问根结点，然后遍历左子树接着是遍历右子树，因此我们可以利用堆栈的先进后出的特点，现将右子树压栈，再将左子树压栈，这样左子树就位于栈顶，可以保证结点的左子树先与右子树被遍历。
 
 　　广度优先搜索(Breadth First Search),又叫宽度优先搜索或横向优先搜索，是从根结点开始沿着树的宽度搜索遍历，上面二叉树的遍历顺序为：ABCDEFG.
+
+> 接下来简单说一下比较的过程
 
 1.比较属性的变化
 
@@ -285,7 +283,7 @@ export default diff;
 ```
 需要注意的是，因为tagName是重复的，不能用这个进行对比，所以需要给子节点加上唯一的标识key,列表对比的时候，使用key进行对比，这样才能复用老的DOM树上的节点;
 
-为了实现深度优先遍历,记录差异，这里使用列表计算法
+> 为了实现深度优先遍历,记录差异，这里使用列表计算法
 
 求最小的插入,删除操作的组合；这个问题抽象出来其实是字符串的最小编辑距离问题（[Edition Distance](https://en.wikipedia.org/wiki/Edit_distance)），最常见的解决算法是 [Levenshtein Distance](https://en.wikipedia.org/wiki/Levenshtein_distance)，通过动态规划求解。我们需要优化一下最常见的操作；具体的实现算法也很多；
 
@@ -438,20 +436,14 @@ const patches = diff(tree, newTree);
 patch($dom, patches);
 ```
 ## 总结
-关键的几个文件就是： [element.js](https://github.com/funnycoderstar/simple-virtual-dom/blob/master/lib/element.js), [diff.js](https://github.com/funnycoderstar/simple-virtual-dom/blob/master/lib/diff.js), [patch.js](https://github.com/funnycoderstar/simple-virtual-dom/blob/master/lib/patch.js);
-github上有很多Virtual DOM实现的例子，博主也是参考了一下其他人的实现，感兴趣的可以去搜索看一下，或者自己实现一个
+1.关键的几个文件就是： [element.js](https://github.com/funnycoderstar/simple-virtual-dom/blob/master/lib/element.js), [diff.js](https://github.com/funnycoderstar/simple-virtual-dom/blob/master/lib/diff.js), [patch.js](https://github.com/funnycoderstar/simple-virtual-dom/blob/master/lib/patch.js);
+
+2.github上有很多Virtual DOM实现的例子，博主也是参考了一下其他人的实现，感兴趣的可以去搜索看一下，或者自己实现一个
 ## 参考
 - [深度剖析：如何实现一个 Virtual DOM 算法](https://github.com/livoras/blog/issues/13)
 - [Vue2.0 v-for 中 :key 到底有什么用？](https://www.zhihu.com/question/61064119/answer/183717717)
 - [React’s diff algorithm](https://calendar.perfplanet.com/2013/diff/ "Permanent Link to React’s diff algorithm")
-
-
-
-
-
-
-
-
+- [react源码解析](https://zhuanlan.zhihu.com/p/28697362)
 
 
 
