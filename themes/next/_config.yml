@@ -6,7 +6,7 @@
 favicon: images/star.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "王亚星,wangyaxing,前端,前端工程师,博客,react,vue,微信小程序"
+keywords: "王亚星,wangyaxing,前端,前端工程师,博客,JavaScript,react,vue,微信小程序"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -343,7 +343,7 @@ disqus:
 
 # changyan
 changyan:
-  enable: true
+  enable: false
   appid: cyt9TRBXm
   appkey: c7fb69deb176c85d5176ad20f0e14cd8
 
@@ -440,8 +440,8 @@ rating:
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
   enable: true
-  app_id: XEAsMaPnlBfGfopmSHzj6EcI-gzGzoHsz
-  app_key: A2MqOco1uFfXyab8t5roljuC
+  app_id: 61yLsrSzzitnvev3bTpEvgFS-gzGzoHsz
+  app_key: yKRoXs0jH2PahaljJab2fgci
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
