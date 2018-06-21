@@ -87,7 +87,7 @@ test.vue
 
 - 点击`title2`,出现下面的情况
 ![2](http://oo4xdz5i0.bkt.clouddn.com/keep-alive2.png)
-- 再次点击`title1`,出现下面的情况,你会发现从后端请求的数据会快速显示出来,但是如果你此时不用
+- 再次点击`title1`,出现下面的情况,你会发现从后端请求的数据会快速显示出来,但是如果你此时不用,会重新请求数据,你可以尝试一下
 ![3](http://oo4xdz5i0.bkt.clouddn.com/keep-alive3.png)
 
 > `test1.vue`和`test2.vue`的相关代码如下:
