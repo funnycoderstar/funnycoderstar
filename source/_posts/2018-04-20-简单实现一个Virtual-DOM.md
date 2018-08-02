@@ -7,7 +7,7 @@ categories: vue
 ---
 
 ## 前言
-之前写过一篇文章[为什么使用v-for时必须添加唯一的key?](http://wangyaxing.top/2018/03/18/2018-03-18-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8v-for%E6%97%B6%E5%BF%85%E9%A1%BB%E6%B7%BB%E5%8A%A0%E5%94%AF%E4%B8%80%E7%9A%84key/),但是解释的不是很深刻，其实真正的原因还需要从Virtual DOM的实现上解释；本篇文章从简单实现一个Virtual DOM入手，去解释一下Virtual DOM的实现思想;
+之前写过一篇文章[为什么使用v-for时必须添加唯一的key?](http://wangyaxing.cn/2018/03/18/2018-03-18-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8v-for%E6%97%B6%E5%BF%85%E9%A1%BB%E6%B7%BB%E5%8A%A0%E5%94%AF%E4%B8%80%E7%9A%84key/),但是解释的不是很深刻，其实真正的原因还需要从Virtual DOM的实现上解释；本篇文章从简单实现一个Virtual DOM入手，去解释一下Virtual DOM的实现思想;
 
 源码地址：[github](https://github.com/funnycoderstar/simple-virtual-dom)
 
@@ -296,7 +296,7 @@ export default diff;
 求最小的插入,删除操作的组合；这个问题抽象出来其实是字符串的最小编辑距离问题（[Edition Distance](https://en.wikipedia.org/wiki/Edit_distance)），最常见的解决算法是 [Levenshtein Distance](https://en.wikipedia.org/wiki/Levenshtein_distance)，通过动态规划求解。我们需要优化一下最常见的操作；具体的实现算法也很多；
 
 
-> 当前实现的简单 Virtual DOM, 并没有实现如果是数组,会优先使用key去做对比; 下面大致从Vue虚拟DOM的Diff算法实现的角度去解释一下之前的一篇文章[为什么使用v-for时必须添加唯一的key?](http://wangyaxing.top/2018/03/18/2018-03-18-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8v-for%E6%97%B6%E5%BF%85%E9%A1%BB%E6%B7%BB%E5%8A%A0%E5%94%AF%E4%B8%80%E7%9A%84key/)
+> 当前实现的简单 Virtual DOM, 并没有实现如果是数组,会优先使用key去做对比; 下面大致从Vue虚拟DOM的Diff算法实现的角度去解释一下之前的一篇文章[为什么使用v-for时必须添加唯一的key?](http://wangyaxing.cn/2018/03/18/2018-03-18-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8v-for%E6%97%B6%E5%BF%85%E9%A1%BB%E6%B7%BB%E5%8A%A0%E5%94%AF%E4%B8%80%E7%9A%84key/)
 
 vue和react的虚拟DOM的Diff算法大致相同，其核心是基于两个简单的假设：
 

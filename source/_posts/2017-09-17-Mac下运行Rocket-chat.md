@@ -78,4 +78,4 @@ npm config set registry https://registry.npm.taobao.org
 如果运行中出现其他的问题欢迎与我交流
 [aboutme](http://wangyaxing.deercv.com/)
 [github](https://github.com/funnycoderstar)
-[blog](http://wangyaxing.top/2017/09/01/wxapp/#more)
+[blog](http://wangyaxing.cn/2017/09/01/wxapp/#more)

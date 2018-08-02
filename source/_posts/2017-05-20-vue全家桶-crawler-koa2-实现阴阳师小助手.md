@@ -16,7 +16,7 @@ categories: vue
 
 ### [github](https://github.com/funnycoderstar/yys-fe)
 
-### [项目链接](http://yys.wangyaxing.top/#/)
+### [项目链接](http://yys.wangyaxing.cn/#/)
 
 ![](http://upload-images.jianshu.io/upload_images/3297464-bcc37825a913c8ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
