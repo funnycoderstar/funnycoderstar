@@ -3,14 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.3.8"
+    "version": "3.7.1"
   },
   "scripts": {
-    "publish": "hexo clean && hexo g && cp -r public/* ../deploy && npm run gitpush",
-    "gitpush": "node ./git.js"
+    "publish": "hexo clean && hexo g && gulp && cp -r public/* ../deploy && npm run gitpush",
+    "gitpush": "node ./git.js",
   },
   "dependencies": {
-    "hexo": "^3.2.0",
+    "hexo": "^3.7.1",
     "hexo-deployer-git": "^0.3.1",
     "hexo-generator-archive": "^0.1.4",
     "hexo-generator-baidu-sitemap": "^0.1.2",
@@ -27,5 +27,14 @@
     "hexo-wordcount": "^3.0.2",
     "shelljs": "^0.7.8",
     "yargs": "^10.0.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-htmlclean": "^2.7.22",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-uglify": "^3.0.1",
+    "pump": "^3.0.0"
   }
 }
