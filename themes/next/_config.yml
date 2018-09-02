@@ -443,6 +443,9 @@ leancloud_visitors:
   app_id: 61yLsrSzzitnvev3bTpEvgFS-gzGzoHsz
   app_key: yKRoXs0jH2PahaljJab2fgci
 
+baidu_tongji: true
+
+
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
@@ -675,6 +678,14 @@ vendors:
   # https://github.com/ethantw/Han
   han:
 
+Plugins:
+- hexo-generator-baidu-sitemap
+- hexo-generator-sitemap
+
+baidusitemap:
+    path: baidusitemap.xml
+sitemap:
+    path: sitemap.xml
 
 # Assets
 css: css

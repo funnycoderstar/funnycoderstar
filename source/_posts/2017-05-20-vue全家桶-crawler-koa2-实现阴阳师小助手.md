@@ -18,7 +18,7 @@ categories: vue
 
 ### [项目链接](http://yys.wangyaxing.cn/#/)
 
-![](http://upload-images.jianshu.io/upload_images/3297464-bcc37825a913c8ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](//upload-images.jianshu.io/upload_images/3297464-bcc37825a913c8ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### [阴阳师小助手后端实现](https://github.com/funnycoderstar/yys-be)
 - nodejs + crawler + koa2 + mongoose
@@ -26,15 +26,15 @@ categories: vue
 ## 效果图
 
 
-![search.png](http://upload-images.jianshu.io/upload_images/3297464-7c42da95d346c282.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![search.png](//upload-images.jianshu.io/upload_images/3297464-7c42da95d346c282.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-![searchResult.png](http://upload-images.jianshu.io/upload_images/3297464-3e76f027626a4124.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![searchResult.png](//upload-images.jianshu.io/upload_images/3297464-3e76f027626a4124.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-![heroList.png](http://upload-images.jianshu.io/upload_images/3297464-c776e7602061a23a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![heroList.png](//upload-images.jianshu.io/upload_images/3297464-c776e7602061a23a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![heroTab.png](http://upload-images.jianshu.io/upload_images/3297464-c266c0669e263d00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![heroTab.png](//upload-images.jianshu.io/upload_images/3297464-c266c0669e263d00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 
@@ -104,6 +104,5 @@ npm run build
 目前小编在学react，所以用[react也写了一版](https://github.com/funnycoderstar/yys_v2),所以刚开始接触react的童鞋也可以看一下，想着第二版的ui设计的好看一点儿，功能再多一点儿，期待更多的建议。
 
 ## About
-[aboutme](http://wangyaxing.deercv.com/)
 [github](https://github.com/funnycoderstar)
 [blog](https://github.com/funnycoderstar/blog)
