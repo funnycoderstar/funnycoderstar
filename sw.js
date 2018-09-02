@@ -11,5 +11,5 @@ if (workbox) {
 
     workbox.routing.registerRoute(new RegExp('.*.(?:js|css)'), workbox.strategies.staleWhileRevalidate());
 
-    workbox.routing.registerRoute(new RegExp('https://cdn.wangyaxing.cn/'), workbox.strategies.cacheFirst());
+    // workbox.routing.registerRoute(new RegExp('https://cdn.wangyaxing.cn/'), workbox.strategies.cacheFirst());
 }
