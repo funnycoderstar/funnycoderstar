@@ -440,8 +440,8 @@ rating:
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
   enable: true
-  app_id: 61yLsrSzzitnvev3bTpEvgFS-gzGzoHsz
-  app_key: yKRoXs0jH2PahaljJab2fgci
+  app_id: 3LXMdpWTuEG7A5I6GhNh7IK2-gzGzoHsz
+  app_key: 8cVBus3fzTdYBer1PlMJJWcd
 
 baidu_tongji: true
 

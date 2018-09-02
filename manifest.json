@@ -1,4 +1,6 @@
 {
+  "name": "funnycoderstar",
+  "short_name": "star",
   "theme_color": "rgba(203,7,83,0.86)",
   "background_color": "#FAFAFA",
   "display": "standalone",
