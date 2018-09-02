@@ -4,7 +4,7 @@ date: 2018-03-07 20:12:33
 tags: javascript
 categories: javascript
 ---
-![title](https://www.laravel-vuejs.com/wp-content/uploads/2017/08/javascript-module-bundling-with-rollup-js-1900x931_c.jpg)
+![title](https://user-gold-cdn.xitu.io/2018/3/7/162009f9cc2a5759?w=1240&h=608&f=jpeg&s=28065)
 > rollup是一款小巧的javascript模块打包工具，更适合于库应用的构建工具;可以将小块代码编译成大块复杂的代码，基于ES6 modules,它可以让你的 bundle 最小化，有效减少文件请求大小,[vue](https://github.com/vuejs/vue)在开发的时候用的是webpack,但是最后将文件打包在一起的时候用的是 rollup.js
 
 <!--more-->

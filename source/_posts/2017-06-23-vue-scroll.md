@@ -5,7 +5,7 @@ tags: vue
 categories: vue
 type: "tags"
 ---
-![title](http://upload-images.jianshu.io/upload_images/1541368-d9be1b3b39abc037?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![title](//upload-images.jianshu.io/upload_images/1541368-d9be1b3b39abc037?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 <!--more-->
 ```js
 data () {

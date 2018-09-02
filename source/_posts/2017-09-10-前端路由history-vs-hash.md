@@ -5,7 +5,7 @@ tags: javascript
 categories: javascript
 type: "javascript"
 ---
-![](http://7xr2s7.com1.z0.glb.clouddn.com/%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%861.jpg)
+![](//7xr2s7.com1.z0.glb.clouddn.com/%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%861.jpg)
 <!--more-->
 ## history路由机制
 用户访问网页的历史记录通常会被保存在一个类似栈对象中,即history对象,点击返回就出栈,跳下一页就入栈.它提供了一些方法来操作页面的前进和后退:

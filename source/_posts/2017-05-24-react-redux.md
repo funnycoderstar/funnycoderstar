@@ -5,7 +5,7 @@ tags: redux
 categories: react
 type: "tags"
 ---
-![title](http://www.ruanyifeng.com/blogimg/asset/2016/bg2016092101.jpg)
+![title](//www.ruanyifeng.com/blogimg/asset/2016/bg2016092101.jpg)
 <!--more-->
 ## redux
 

@@ -7,7 +7,7 @@ categories: vue
 ---
 
 ## 前言
-之前写过一篇文章[为什么使用v-for时必须添加唯一的key?](http://wangyaxing.cn/2018/03/18/2018-03-18-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8v-for%E6%97%B6%E5%BF%85%E9%A1%BB%E6%B7%BB%E5%8A%A0%E5%94%AF%E4%B8%80%E7%9A%84key/),但是解释的不是很深刻，其实真正的原因还需要从Virtual DOM的实现上解释；本篇文章从简单实现一个Virtual DOM入手，去解释一下Virtual DOM的实现思想;
+之前写过一篇文章[为什么使用v-for时必须添加唯一的key?](//wangyaxing.cn/2018/03/18/2018-03-18-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8v-for%E6%97%B6%E5%BF%85%E9%A1%BB%E6%B7%BB%E5%8A%A0%E5%94%AF%E4%B8%80%E7%9A%84key/),但是解释的不是很深刻，其实真正的原因还需要从Virtual DOM的实现上解释；本篇文章从简单实现一个Virtual DOM入手，去解释一下Virtual DOM的实现思想;
 
 源码地址：[github](https://github.com/funnycoderstar/simple-virtual-dom)
 

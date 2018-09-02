@@ -4,7 +4,7 @@ date: 2017-11-27 16:11:44
 tags: javascript
 categories: javascript
 ---
-![title](http://oo4xdz5i0.bkt.clouddn.com/zhuangzhu.png)
+![title](//oo4xdz5i0.bkt.clouddn.com/zhuangzhu.png)
 引言: 本篇文章主要总结了一些javascript中特别基础的内容,主要涉及到`DOM0级和DOM2级事件`,`事件流`, `事件委托`, `判断变量的类型`每次被问到,总是能想起一点,但是也总记不全,所以遇到这种情况的时候,就简单的记录一下.
 <!--more-->
 

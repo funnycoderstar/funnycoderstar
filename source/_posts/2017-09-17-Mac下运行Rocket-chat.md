@@ -6,7 +6,7 @@ categories: [meteor, Rocket.chat]
 type: [meteor, Rocket.chat]
 
 ---
-![title](http://oo4xdz5i0.bkt.clouddn.com/rocketLogo.png-blogImg)
+![title](//oo4xdz5i0.bkt.clouddn.com/rocketLogo.png-blogImg)
 <!--more-->
 ### 1,简介
 - [github](https://github.com/RocketChat/Rocket.Chat)
@@ -64,7 +64,7 @@ npm config set registry https://registry.npm.taobao.org
 6,添加到path
 7,source .zshrc // 保存修改
 ```
-> ![phantomjst添加到Path.png](http://upload-images.jianshu.io/upload_images/3297464-b97ab1ba31b426eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![phantomjst添加到Path.png](//upload-images.jianshu.io/upload_images/3297464-b97ab1ba31b426eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 > 运行成功命令行如下
 ![](http://oo4xdz5i0.bkt.clouddn.com/rocketChatSucess.png)
