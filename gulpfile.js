@@ -4,6 +4,7 @@ var uglify = require('gulp-uglify');
 var htmlmin = require('gulp-htmlmin');
 var htmlclean = require('gulp-htmlclean');
 var pump = require('pump');
+var babel = require('gulp-babel');
 
 var option = {
     removeComments: true,  //清除HTML注释
@@ -36,17 +37,19 @@ gulp.task('html', function() {
         })
         .pipe(gulp.dest('./public'))
 });
+
 // 压缩 public/js 目录 js
 gulp.task('js', function (cb) {
     pump([
           gulp.src('./public/**/*.js'),
+          babel(),
           uglify(),
           gulp.dest('./public')
       ],
       cb
     );
-  });
-
+});
+  
 // 压缩图片任务
 // 在命令行输入 gulp images 启动此任务
 gulp.task('images', function () {
