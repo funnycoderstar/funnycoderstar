@@ -355,6 +355,21 @@ changyan:
 # You can get your uid from https://livere.com/insight/myCode (General web site)
 #livere_uid: your uid
 
+
+# Gitment
+# Introduction: https://imsun.net/posts/gitment-introduction/
+# You can get your Github ID from https://api.github.com/users/<Github username>
+gitment:
+  enable: true
+  mint: true 
+  count: true
+  lazy: false
+  cleanly: false
+  language:
+  github_user:  funnycoderstar
+  github_repo: https://github.com/funnycoderstar/gitment-blog
+  client_id: f1898d8e3b95cd8b8131
+  client_secret: c19e60db0e8b085f5d15130b254f07089437467d
 # Baidu Share
 # Available value:
 #    button | slide
