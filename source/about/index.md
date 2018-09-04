@@ -13,7 +13,7 @@ type: 'about'
 
 😄上面的介绍我自己看到都会笑出声,还是说实话吧,小仙女倒是跟我不沾边,不过逗比还是可以有的☺
 
-![让你三行代码](http://img.youbiaoqing.com/u/36d96f5061fc5533438f7e9783b6c75c.jpg)
+![让你三行代码](//img.youbiaoqing.com/u/36d96f5061fc5533438f7e9783b6c75c.jpg)
 
 很高兴大家来到我的博客;
 
@@ -22,7 +22,7 @@ type: 'about'
 
 首先作为程序员,有很多专属的程序员表情包,还有只有程序员才能理解的梗和笑话段子,可以看一些知乎上这个[程序员界有什么经典的笑话](https://www.zhihu.com/question/39441398);
 
-![赞](http://www.cio.com.cn/source/attachments/image/20171106/20171106105814_81258.jpg)
+![赞](//www.cio.com.cn/source/attachments/image/20171106/20171106105814_81258.jpg)
 
 下面简单介绍一下我的经历:
 
