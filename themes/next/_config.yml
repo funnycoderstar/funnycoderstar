@@ -248,8 +248,8 @@ post_meta:
 # Dependencies: https://github.com/willin/hexo-wordcount
 post_wordcount:
   item_text: true
-  wordcount: false
-  min2read: false
+  wordcount: true
+  min2read: true
   totalcount: false
   separated_meta: true
 
@@ -601,7 +601,7 @@ busuanzi_count:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page
@@ -609,7 +609,7 @@ baidu_push: false
 # API Documentation:
 # https://developers.google.com/google-apps/calendar/v3/reference/events/list
 calendar:
-  enable: false
+  enable: true
   calendar_id: <required>
   api_key: <required>
   orderBy: startTime
