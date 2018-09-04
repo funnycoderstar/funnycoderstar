@@ -13,7 +13,6 @@ type: 'about'
 
 😄上面的介绍我自己看到都会笑出声,还是说实话吧,小仙女倒是跟我不沾边,不过逗比还是可以有的☺
 
-![让你三行代码](//img.youbiaoqing.com/u/36d96f5061fc5533438f7e9783b6c75c.jpg)
 
 很高兴大家来到我的博客;
 
@@ -22,7 +21,6 @@ type: 'about'
 
 首先作为程序员,有很多专属的程序员表情包,还有只有程序员才能理解的梗和笑话段子,可以看一些知乎上这个[程序员界有什么经典的笑话](https://www.zhihu.com/question/39441398);
 
-![赞](//www.cio.com.cn/source/attachments/image/20171106/20171106105814_81258.jpg)
 
 下面简单介绍一下我的经历:
 
@@ -42,12 +40,13 @@ type: 'about'
 生活上依然是个逗比;
 
 喜欢旅行,喜欢音乐,大一学过半年街舞,大二开始自学吉他;
-
+
+现就职于阿里文娱大麦网, 考虑来阿里的可以找我内推
 
 > 我是一个很有趣的人,喜欢交朋友,欢迎多和我交流~
 
 
-<img src="http://oo4xdz5i0.bkt.clouddn.com/wechat.jpg" style="width: 300px;"/>
+<img src="https://cdn.wangyaxing.cn/wechat.jpg" style="width: 300px;"/>
 ......
 
 

@@ -6,7 +6,7 @@ type: "tags"
 categories: vue
 ---
 
-![title](//oo4xdz5i0.bkt.clouddn.com/keep-alive.jpg)
+![title](https://cdn.wangyaxing.cn/keep-alive.jpg)
 <!--more-->
 
 项目中写vue也没注意到`<keep-alive></keep-alive>`这个组件,最近在深入的研究vue组件的生命周期函数,每一个函数都是干嘛的,然后其中有`activated`和`deactivated`这两个函数与`<keep-alive></keep-alive>`这个组件有关
@@ -81,14 +81,14 @@ test.vue
 测试结果如下:
 注意看一下页面和控制台输出的信息,可以更加直观的注意到`<keep-alive>`的作用及`activated`和`deactivated`这两个函数什么时候会被触发
 - 打开页面,会出现下面这样
-![1](http://oo4xdz5i0.bkt.clouddn.com/keep-alive1.png)
+![1](https://cdn.wangyaxing.cn/keep-alive1.png)
 
 用setTimeout模拟请求后端接口的场景
 
 - 点击`title2`,出现下面的情况
-![2](http://oo4xdz5i0.bkt.clouddn.com/keep-alive2.png)
+![2](https://cdn.wangyaxing.cn/keep-alive2.png)
 - 再次点击`title1`,出现下面的情况,你会发现从后端请求的数据会快速显示出来,但是如果你此时不用,会重新请求数据,你可以尝试一下
-![3](http://oo4xdz5i0.bkt.clouddn.com/keep-alive3.png)
+![3](https://cdn.wangyaxing.cn/keep-alive3.png)
 
 > `test1.vue`和`test2.vue`的相关代码如下:
 

@@ -4,7 +4,7 @@ date: 2017-11-27 16:11:44
 tags: javascript
 categories: javascript
 ---
-![title](//oo4xdz5i0.bkt.clouddn.com/zhuangzhu.png)
+![title](https://cdn.wangyaxing.cn/zhuangzhu.png)
 引言: 本篇文章主要总结了一些javascript中特别基础的内容,主要涉及到`DOM0级和DOM2级事件`,`事件流`, `事件委托`, `判断变量的类型`每次被问到,总是能想起一点,但是也总记不全,所以遇到这种情况的时候,就简单的记录一下.
 <!--more-->
 
@@ -43,7 +43,7 @@ btn.onclick = null;
 - 事件捕获: 和事件冒泡相反,从最外面的元素向下传播: 比如同样点击了div: Document->html->body->div
 
 事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。首先是事件捕获阶段；然后是实际的目标接收到事件。最后一个阶段是冒泡阶段，可以在这个阶段对事件作出相应。
-![事件流](http://oo4xdz5i0.bkt.clouddn.com/event.jpg)
+![事件流](https://cdn.wangyaxing.cn/event.jpg)
 所有的浏览器都支持冒泡,我们通常使用事件冒泡,很少使用事件捕获
 
 ## 事件委托(事件代理)及使用场景

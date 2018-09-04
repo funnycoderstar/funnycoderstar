@@ -6,7 +6,7 @@ categories: [meteor, Rocket.chat]
 type: [meteor, Rocket.chat]
 
 ---
-![title](//oo4xdz5i0.bkt.clouddn.com/rocketLogo.png-blogImg)
+![title](https://cdn.wangyaxing.cn/rocketLogo.png-blogImg)
 <!--more-->
 ### 1,简介
 - [github](https://github.com/RocketChat/Rocket.Chat)
@@ -53,7 +53,7 @@ npm config set registry https://registry.npm.taobao.org
 - 2,运行过程需要`翻墙`，因为国外的npm包在国内下载可能就被墙了
 
 > 我在安装的过程中出现报错：
- ![](http://oo4xdz5i0.bkt.clouddn.com/phantomjs-error.png)
+ ![](https://cdn.wangyaxing.cn/phantomjs-error.png)
  找了phantomjs[镜像](https://npm.taobao.org/mirrors/phantomjs)单独安装了一下速度很快，就成功了,😊,然后把phantomjs添加到环境变量(方法如下)
 ```
 1,cd phantomjs
@@ -67,10 +67,10 @@ npm config set registry https://registry.npm.taobao.org
 > ![phantomjst添加到Path.png](//upload-images.jianshu.io/upload_images/3297464-b97ab1ba31b426eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 > 运行成功命令行如下
-![](http://oo4xdz5i0.bkt.clouddn.com/rocketChatSucess.png)
+![](https://cdn.wangyaxing.cn/rocketChatSucess.png)
 
 > 运行成功浏览器中如下
- ![](http://oo4xdz5i0.bkt.clouddn.com/rocketChat.png)
+ ![](https://cdn.wangyaxing.cn/rocketChat.png)
 
 [参考](http://blog.csdn.net/u011619283/article/details/52971473)
 

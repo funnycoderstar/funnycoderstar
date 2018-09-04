@@ -20,7 +20,7 @@ type: "css"
 }
 ```
 效果如图
-![](http://oo4xdz5i0.bkt.clouddn.com/border.jpg)
+![](https://cdn.wangyaxing.cn/border.jpg)
 
 上面看到的都是三角形,其实想实现单个三角形只需把其他三个三角形的`border-color`设置为透明色就可以了
 这样就实现了三角形
@@ -135,7 +135,7 @@ type: "css"
     border-top: 20px solid #A5C4EC;
 }
 ```
-![](http://oo4xdz5i0.bkt.clouddn.com/border-arrow.jpg)
+![](https://cdn.wangyaxing.cn/border-arrow.jpg)
 
 ### 3,css实现toolTip(空心三角箭头)源码如下
 原理:
@@ -173,7 +173,7 @@ type: "css"
     border-top: 20px solid #fff;
 }
 ```
-![title](http://oo4xdz5i0.bkt.clouddn.com/border1.jpg)
+![title](https://cdn.wangyaxing.cn/border1.jpg)
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -331,7 +331,7 @@ type: "css"
 </html>
 ```
 ### 效果图如下
-![效果图](http://oo4xdz5i0.bkt.clouddn.com/toolTip.png)
+![效果图](https://cdn.wangyaxing.cn/toolTip.png)
 
 [参考](https://juejin.im/post/59c9e9276fb9a00a616f4842)
 
