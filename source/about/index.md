@@ -4,9 +4,7 @@ date: 2017-08-09 14:04:36
 type: 'about'
 ---
 
-> [个人简历](https://hacknical.com/resume/S1VKezRp-?locale=zh)
-
-![变量名](http://p9.pstatp.com/large/31df0000d9940efb726c)
+> [个人简历](https://hacknical.com/resume/S1VKezRp-?locale=zh )
 
 <br>
 > 我,古灵精怪小仙女一枚;
