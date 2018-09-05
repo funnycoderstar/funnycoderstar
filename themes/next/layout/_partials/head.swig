@@ -2,7 +2,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="{{ theme.android_chrome_color }}">
-
+<script type='text/javascript'>window.BWEUM||(BWEUM={});BWEUM.info = {"stand":true,"agentType":"browser","agent":"browsercollector.oneapm.com/static/js/bw-send-415.6.31.js","beaconUrl":"browsercollector.oneapm.com/beacon","licenseKey":"RFIav~UziY6fM6qy","applicationID":9990115};</script><script type="text/javascript" src="//browsercollector.oneapm.com/static/js/bw-loader-415.6.31.js"></script>
 
 {% if theme.pace %}
   {% set pace_css_uri = url_for(theme.vendors._internal + '/pace/'+ theme.pace_theme +'.min.css?v=1.0.2') %}
