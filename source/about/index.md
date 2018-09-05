@@ -3,10 +3,10 @@ title: 关于我
 date: 2017-08-09 14:04:36
 type: 'about'
 ---
+![](https://cdn.suisuijiang.com/ImageMessage/5adad39555703565e79040fa_1536163476776.jpeg)
 
 > [个人简历](https://hacknical.com/resume/S1VKezRp-?locale=zh )
 
-<br>
 > 我,古灵精怪小仙女一枚;
 
 😄上面的介绍我自己看到都会笑出声,还是说实话吧,小仙女倒是跟我不沾边,不过逗比还是可以有的☺
