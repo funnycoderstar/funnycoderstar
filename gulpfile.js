@@ -4,7 +4,6 @@ var uglify = require('gulp-uglify');
 var htmlmin = require('gulp-htmlmin');
 var htmlclean = require('gulp-htmlclean');
 var pump = require('pump');
-var babel = require('gulp-babel');
 
 var option = {
     removeComments: true,  //清除HTML注释
@@ -42,7 +41,6 @@ gulp.task('html', function() {
 gulp.task('js', function (cb) {
     pump([
           gulp.src('./public/**/*.js'),
-          babel(),
           uglify(),
           gulp.dest('./public')
       ],
