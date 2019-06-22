@@ -7,7 +7,8 @@
   },
   "scripts": {
     "publish": "hexo clean && hexo g && gulp && cp -r public/* ../deploy && npm run gitpush",
-    "gitpush": "node ./git.js"
+    "gitpush": "node ./git.js",
+    "start": "hexo server"
   },
   "dependencies": {
     "hexo": "^3.8.0",
