@@ -35,7 +35,7 @@ favicon:
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 # Set default keywords (Use a comma to separate)
-keywords: "王亚星,wangyaxing,前端,前端工程师,博客,JavaScript,react,vue,微信小程序"
+keywords: "木子星兮,wangyaxing,前端,前端工程师,博客,JavaScript,react,vue,微信小程序"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -97,7 +97,7 @@ menu:
   tags: /tags/ || tags
   categories: /categories/ || th
   archives: /archives/ || archive
-  photo: /photo/ || heartbeat
+  # photo: /photo/ || heartbeat
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
@@ -111,7 +111,7 @@ menu_icons:
   categories: th
   schedule: calendar
   tags: tags
-  photo: image
+  # photo: image
   essay: heart
   archives: archive
   sitemap: sitemap
