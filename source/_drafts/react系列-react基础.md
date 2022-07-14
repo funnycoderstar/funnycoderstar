@@ -4,35 +4,51 @@ date: 2017-11-07 21:45:30
 tags: react
 ---
 
-1,react简介
-React把用户界面抽象成一个组件，比如按钮组件Button,对话框组件Dialog,日期组件Calendar.开发者通过组合这些组件，最终得到功能丰富，可交互的页面
+1,react 简介
+React 把用户界面抽象成一个组件，比如按钮组件 Button,对话框组件 Dialog,日期组件 Calendar.开发者通过组合这些组件，最终得到功能丰富，可交互的页面
+
 ## 专注视图层
-React专注于提供清晰，简洁的view层解决方案。
-## Virtual DOM 
-真实页面对应一个DOM树，在传统页面的开发模式中，每次需要更新页面时，都需要自动操作DOM来进行更新。
-DOM操作非常昂贵，性能消耗最大的就是DOM操作，而且这部分代码会变得难以维护。React把真实DOM树转换成JavaScript对象树，也就是Virtual DOM
+
+React 专注于提供清晰，简洁的 view 层解决方案。
+
+## Virtual DOM
+
+真实页面对应一个 DOM 树，在传统页面的开发模式中，每次需要更新页面时，都需要自动操作 DOM 来进行更新。
+DOM 操作非常昂贵，性能消耗最大的就是 DOM 操作，而且这部分代码会变得难以维护。React 把真实 DOM 树转换成 JavaScript 对象树，也就是 Virtual DOM
+
 ## 函数式编程
 
-2，JSX语法
+2，JSX 语法
 
-## JSX的由来
-React通过更新和构建`虚拟元素`来管理整个Virtual DOM的.
-虚拟元素为真实元素的对应,它的构建和更新都是在内存中完成的,并不会真正渲染到DOM中.
-React中创建的虚拟元素可以分为两类,DOM元素和组件元素,分别对应着虚拟DOM元素与自定义元素;
-1,DOM元素
+## JSX 的由来
+
+React 通过更新和构建`虚拟元素`来管理整个 Virtual DOM 的.
+虚拟元素为真实元素的对应,它的构建和更新都是在内存中完成的,并不会真正渲染到 DOM 中.
+React 中创建的虚拟元素可以分为两类,DOM 元素和组件元素,分别对应着虚拟 DOM 元素与自定义元素;
+1,DOM 元素
 2,组件元素
-## JSX基本语法一个标签包裹
-- 定义标签时,只允许被
-3，react组件
+
+## JSX 基本语法一个标签包裹
+
+-   定义标签时,只允许被
+    3，react 组件
+
 ## 组件的演变
-## React组件的构建
-4，react数据流
+
+## React 组件的构建
+
+4，react 数据流
+
 ## state
+
 ## props
 
-5，react生命周期
+5，react 生命周期
+
 ## 挂载和卸载过程
+
 1,组件挂载是最基本的过程,这个过程主要做组件状态的初始化.
+
 ```js
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -41,16 +57,16 @@ class App extends Component {
     // 1,这两个属性被声明成静态属性,意味着你也可以再类外面访问他们: App.propTypes和 App.defaultProps
     static propTypes = {
         // props的类型检查
-    }
+    };
     static defaultProps = {
         // props的默认类型
-    }
+    };
 
     constructor(props) {
         super(props);
         this.state = {
             //
-        }
+        };
     }
     // 2,componentWillMount和componentDidMount分别代表了渲染前后的时刻
     componentWillMount() {
@@ -68,17 +84,15 @@ class App extends Component {
         // 在这个方法中,我们常常会执行一些清理方法,如事件回收或是清理定时器
     }
     render() {
-        return (
-            <div>
-                this is demo
-            </div>
-        );
+        return <div>this is demo</div>;
     }
 }
 
 export default App;
 ```
+
 ## 数据更新过程
+
 ```js
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -99,30 +113,35 @@ class App extends Component {
         // 提供更新前的props和state
     }
     render() {
-        return (
-            <div>
-                this is demo
-            </div>
-        );
+        return <div>this is demo</div>;
     }
 }
 
 export default App;
 ```
-- 如果组件自身的state更新了,那么会依次执行shouldComponentUpdate,componentWillUpdate,render, componentDidUpdate.
->   shouldComponentUpdate是一个特别的方法,他接受需要更新的props和state,让开发者增加必要的条件判断,让其在需要时更新.因此,当方法返回false的时候,组件不再向下执行生命周期方法
-    本质是用来进行正确的组件渲染(也是性能优化的手段之一):
-    当父节点props改变的时候,在理想情况下,只渲染在一条链路省有相关props改变的节点即可,但是默认情况下,React会渲染所有的节点,因为shouldComponentUpdate默认返回true
-    值得注意的是,无状态组件是没有生命周期方法的,这也意味着它没有shouldComponentUpdate,渲染到该类组件时,每次都会重新渲染,不少开发者在使用无状态组件开发的时候都会纠结这一点,为了更方心得使用,我们可以选择用Recompose库的pure方法;
-    const optionmizeComponent = pure(ExpensiveComponent)
-    pure方法做的事情就是将无状态组件转换成class语法加上PureRender后的组件
 
-- 如果组件是由父组件更新props而更新的,那么在shouldComponentUpdate之前会先执行componentWillReceiveProps方法,此方法可以作为React在props传入后,渲染之前setState的机会,在此方法中调用setState是不会二次渲染的
+-   如果组件自身的 state 更新了,那么会依次执行 shouldComponentUpdate,componentWillUpdate,render, componentDidUpdate.
+
+    > shouldComponentUpdate 是一个特别的方法,他接受需要更新的 props 和 state,让开发者增加必要的条件判断,让其在需要时更新.因此,当方法返回 false 的时候,组件不再向下执行生命周期方法
+
+        本质是用来进行正确的组件渲染(也是性能优化的手段之一):
+        当父节点props改变的时候,在理想情况下,只渲染在一条链路省有相关props改变的节点即可,但是默认情况下,React会渲染所有的节点,因为shouldComponentUpdate默认返回true
+        值得注意的是,无状态组件是没有生命周期方法的,这也意味着它没有shouldComponentUpdate,渲染到该类组件时,每次都会重新渲染,不少开发者在使用无状态组件开发的时候都会纠结这一点,为了更方心得使用,我们可以选择用Recompose库的pure方法;
+        const optionmizeComponent = pure(ExpensiveComponent)
+        pure方法做的事情就是将无状态组件转换成class语法加上PureRender后的组件
+
+-   如果组件是由父组件更新 props 而更新的,那么在 shouldComponentUpdate 之前会先执行 componentWillReceiveProps 方法,此方法可以作为 React 在 props 传入后,渲染之前 setState 的机会,在此方法中调用 setState 是不会二次渲染的
+
 ## 整体流程
-React的生命周期流程我们用一张图来表示
-![react生命周期整体流程图](https://cdn.wangyaxing.cn/reactLife.jpeg)
-6，react与DOM
+
+React 的生命周期流程我们用一张图来表示
+![react生命周期整体流程图](https://cdn.ionestar.cn/reactLife.jpeg)
+6，react 与 DOM
+
 ## ReactDOM
-## ReactDOM的不稳定性
+
+## ReactDOM 的不稳定性
+
 ## refs
-## React之外的DOM操作
+
+## React 之外的 DOM 操作

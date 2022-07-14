@@ -2,12 +2,14 @@
 title: vue全家桶+crawler+koa2 实现阴阳师小助手
 date: 2017-05-20 17:26:46
 tags: vue
-type: "tags"
+type: 'tags'
 categories: vue
 ---
+
 ![title](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1502713315793&di=f4c278533dc65215060e4dd216b01a20&imgtype=0&src=http%3A%2F%2Fupload.chinaz.com%2F2016%2F0928%2F6361065295044373028726125.png)
 最近一直在玩阴阳师，看了好多小助手，觉得太复杂了，还得登录什么的，想着自己写一个简单的小助手，只要输入要搜索的式神，我想知道的关于这个式神的数据就能显示出来。
-只是第一版，前端用vue全家桶实现的，很适合刚开始接触vue的，后端用node实现的，如果有更好的建议或者想一起合作写个更好用点的，欢迎联系 [作者](https://github.com/funnycoderstar/yys-fe)。
+只是第一版，前端用 vue 全家桶实现的，很适合刚开始接触 vue 的，后端用 node 实现的，如果有更好的建议或者想一起合作写个更好用点的，欢迎联系 [作者](https://github.com/funnycoderstar/yys-fe)。
+
 <!-- more -->
 
 # yys-fe(阴阳师小助手前端)
@@ -16,30 +18,26 @@ categories: vue
 
 ### [github](https://github.com/funnycoderstar/yys-fe)
 
-### [项目链接](http://yys.wangyaxing.cn/#/)
+### [项目链接](http://yys.ionestar.cn/#/)
 
 ![](//upload-images.jianshu.io/upload_images/3297464-bcc37825a913c8ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### [阴阳师小助手后端实现](https://github.com/funnycoderstar/yys-be)
-- nodejs + crawler + koa2 + mongoose
+
+-   nodejs + crawler + koa2 + mongoose
 
 ## 效果图
 
-
 ![search.png](//upload-images.jianshu.io/upload_images/3297464-7c42da95d346c282.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
 ![searchResult.png](//upload-images.jianshu.io/upload_images/3297464-3e76f027626a4124.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
 
 ![heroList.png](//upload-images.jianshu.io/upload_images/3297464-c776e7602061a23a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ![heroTab.png](//upload-images.jianshu.io/upload_images/3297464-c266c0669e263d00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
-
-
 ## 基本
+
     - 构建工具：webpack；
     - 语言：Es6；
     - 代码规范：eslint
@@ -54,14 +52,14 @@ categories: vue
 ```
 |-- [build]                          //构建服务和webpack配置
 |-- [config]                        //项目不同环境的配置
-|-- [dist]                            //文件服务器根目录  
+|-- [dist]                            //文件服务器根目录
 |-- [node_modules]          //项目依赖
 |-- [src]                             //源码
 |   |-- [assets]                    //资源文件
 |   |-- [components]           //项目模块文件夹
 |   |-- [store]                      //存储数据
 |   |       |-- index.js            //vuex store 定义
-|   |-- App.vue                   //主页面   
+|   |-- App.vue                   //主页面
 |   |-- main.js                     //webpack预编译入口
 |   |-- [router]                     //全局路由定义
 |-- .babelrc                       //babel配置
@@ -71,26 +69,27 @@ categories: vue
 |-- README.md               //关于启动项目的命令和含义
 
 ```
+
 ## 已经完成的模块
 
-- [x] 式神搜索页面(支持模糊搜索)
-- [x] 式神搜索结果页面
-- [x] 式神列表页面
-- [x] 式神详细信息页面
-- [X] 推荐御魂
-- [X] 推荐搭配
-- [X] 式神点评
+-   [x] 式神搜索页面(支持模糊搜索)
+-   [x] 式神搜索结果页面
+-   [x] 式神列表页面
+-   [x] 式神详细信息页面
+-   [x] 推荐御魂
+-   [x] 推荐搭配
+-   [x] 式神点评
 
 ## 待完成与优化
 
-- [ ] 搜索功能添加历史搜索和热门搜索
-- [ ] 式神攻略
-- [ ] 式神视频
-- [ ] 页面样式的优化
+-   [ ] 搜索功能添加历史搜索和热门搜索
+-   [ ] 式神攻略
+-   [ ] 式神视频
+-   [ ] 页面样式的优化
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
@@ -106,3 +105,4 @@ npm run build
 ## About
 [github](https://github.com/funnycoderstar)
 [blog](https://github.com/funnycoderstar/blog)
+```

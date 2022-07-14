@@ -5,11 +5,20 @@ if (workbox) {
 
     workbox.precaching.precache(['/', '/index.html']);
 
-    workbox.routing.registerRoute(new RegExp('^https?://wangyaxing.cn/?$'), workbox.strategies.networkFirst());
+    workbox.routing.registerRoute(
+        new RegExp('^https?://ionestar.cn/?$'),
+        workbox.strategies.networkFirst()
+    );
 
     workbox.routing.registerRoute(new RegExp('.*.html'), workbox.strategies.networkFirst());
 
-    workbox.routing.registerRoute(new RegExp('.*.(?:js|css)'), workbox.strategies.staleWhileRevalidate());
+    workbox.routing.registerRoute(
+        new RegExp('.*.(?:js|css)'),
+        workbox.strategies.staleWhileRevalidate()
+    );
 
-    workbox.routing.registerRoute(new RegExp('https://cdn.wangyaxing.cn/'), workbox.strategies.cacheFirst());
+    workbox.routing.registerRoute(
+        new RegExp('https://cdn.ionestar.cn/'),
+        workbox.strategies.cacheFirst()
+    );
 }

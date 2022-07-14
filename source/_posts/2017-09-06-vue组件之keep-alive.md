@@ -2,24 +2,31 @@
 title: 用vue,你知道 keep-alive 么
 date: 2017-09-06 17:26:46
 tags: vue
-type: "tags"
+type: 'tags'
 categories: vue
 ---
 
-![title](https://cdn.wangyaxing.cn/keep-alive.jpg)
+![title](https://cdn.ionestar.cn/keep-alive.jpg)
+
 <!--more-->
 
-项目中写vue也没注意到`<keep-alive></keep-alive>`这个组件,最近在深入的研究vue组件的生命周期函数,每一个函数都是干嘛的,然后其中有`activated`和`deactivated`这两个函数与`<keep-alive></keep-alive>`这个组件有关
-- `activated`: keep-alive组件激活时调用
-- `deactivated`: keep-alive组件停用时调用
-### [keep-alive用法](https://cn.vuejs.org/v2/api/?#keep-alive)
-- `<keep-alive>`包裹动态组件时,会缓存不活动的组件实例,而不是销毁它们
-- `<keep-alive>`是一个抽象组件:它自身不会渲染一个DOM元素,也不会出现在父组件链中
-- 当组件在`<keep-alive>`内被切换,它的`activated`和`deactivated`这两个生命周期钩子函数将会被对应执行
+项目中写 vue 也没注意到`<keep-alive></keep-alive>`这个组件,最近在深入的研究 vue 组件的生命周期函数,每一个函数都是干嘛的,然后其中有`activated`和`deactivated`这两个函数与`<keep-alive></keep-alive>`这个组件有关
+
+-   `activated`: keep-alive 组件激活时调用
+-   `deactivated`: keep-alive 组件停用时调用
+
+### [keep-alive 用法](https://cn.vuejs.org/v2/api/?#keep-alive)
+
+-   `<keep-alive>`包裹动态组件时,会缓存不活动的组件实例,而不是销毁它们
+-   `<keep-alive>`是一个抽象组件:它自身不会渲染一个 DOM 元素,也不会出现在父组件链中
+-   当组件在`<keep-alive>`内被切换,它的`activated`和`deactivated`这两个生命周期钩子函数将会被对应执行
+
 ### 具体的实例如下
-- 是一个简单的tab切换,可以尝试把`<keep-alive>`去掉之后,对比一下,然后就会发现它的好处
+
+-   是一个简单的 tab 切换,可以尝试把`<keep-alive>`去掉之后,对比一下,然后就会发现它的好处
 
 test.vue
+
 ```js
 <template>
     <div class="test">
@@ -78,21 +85,24 @@ test.vue
 }
 </style>
 ```
+
 测试结果如下:
 注意看一下页面和控制台输出的信息,可以更加直观的注意到`<keep-alive>`的作用及`activated`和`deactivated`这两个函数什么时候会被触发
-- 打开页面,会出现下面这样
-![1](https://cdn.wangyaxing.cn/keep-alive1.png)
 
-用setTimeout模拟请求后端接口的场景
+-   打开页面,会出现下面这样
+    ![1](https://cdn.ionestar.cn/keep-alive1.png)
 
-- 点击`title2`,出现下面的情况
-![2](https://cdn.wangyaxing.cn/keep-alive2.png)
-- 再次点击`title1`,出现下面的情况,你会发现从后端请求的数据会快速显示出来,但是如果你此时不用,会重新请求数据,你可以尝试一下
-![3](https://cdn.wangyaxing.cn/keep-alive3.png)
+用 setTimeout 模拟请求后端接口的场景
+
+-   点击`title2`,出现下面的情况
+    ![2](https://cdn.ionestar.cn/keep-alive2.png)
+-   再次点击`title1`,出现下面的情况,你会发现从后端请求的数据会快速显示出来,但是如果你此时不用,会重新请求数据,你可以尝试一下
+    ![3](https://cdn.ionestar.cn/keep-alive3.png)
 
 > `test1.vue`和`test2.vue`的相关代码如下:
 
 test1.vue
+
 ```js
 <template>
   <div class="test1">
@@ -123,7 +133,9 @@ test1.vue
 </script>
 
 ```
+
 test2.vue
+
 ```js
 <template>
   <div>
@@ -138,7 +150,7 @@ test2.vue
             return {
                 testInfo2: '',
             }
-        },  
+        },
         activated() {
             console.log('测试2被激活');
         },

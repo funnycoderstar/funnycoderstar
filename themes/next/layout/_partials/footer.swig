@@ -1,7 +1,7 @@
 <div class="copyright">{#
 #}{% set current = date(Date.now(), "YYYY") %}{#
 #}&copy; {% if theme.footer.since and theme.footer.since != current %}{{ theme.footer.since }} &mdash; {% endif %}{#
-#}<span itemprop="copyrightYear">{{ current }}</span>
+#}<span itemprop="copyrightYear">{{ current }} </span> |  <a class="theme-link" href="https://beian.miit.gov.cn/" target="_blank">京ICP备17031210号-3</a>
   <span class="with-love">
     <i class="fa fa-{{ theme.footer.icon }}"></i>
   </span>

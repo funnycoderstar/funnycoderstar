@@ -152,7 +152,8 @@ scheme: Gemini
 social:
   gitHub: https://github.com/funnycoderstar || github
   # 知乎: https://www.zhihu.com/people/wang-ya-xing-38/activities
-  简书: http://www.jianshu.com/u/92fec6da2d1a || heartbeat
+  # 简书: http://www.jianshu.com/u/92fec6da2d1a || heartbeat
+  技术blog: https://ionestar.cn/blog/ || heartbeat
   掘金: https://juejin.im/user/58c6a15544d9040068046025 || pencil
   简历: https://hacknical.com/resume/S1VKezRp-?locale=zh || user-md
 social_icons:

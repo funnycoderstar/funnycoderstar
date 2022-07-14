@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 木子星兮
+title: IOneStar
 subtitle: 临渊羡鱼，不如退而结网
-description: 木子星兮的博客
-author: funnycoderstar
+description: IOneStar 的博客
+author: IOneStar
 language: zh-Hans
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://wangyaxing.cn
+url: http://ionestar.cn
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -97,13 +97,13 @@ pwa:
       "Scope": "/"
       "start_url": "/"
       icons:
-        - src: https://cdn.wangyaxing.cn/icon-144x144.png?v=1
+        - src: https://cdn.ionestar.cn/icon-144x144.png?v=1
           sizes: 144x144
           type: image/png
-        - src: https://cdn.wangyaxing.cn/icon-128x128.png
+        - src: https://cdn.ionestar.cn/icon-128x128.png
           sizes: 128x128
           type: image/png
-        - src: https://cdn.wangyaxing.cn/icon-96x96.png
+        - src: https://cdn.ionestar.cn/icon-96x96.png
           sizes: 96x96
           type: image/png
   serviceWorker:
